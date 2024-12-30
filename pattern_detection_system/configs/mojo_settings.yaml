@@ -57,11 +57,13 @@ performance_monitoring:
   profiling: true
   trace_events: true
   
-python_integration:
+java_integration:
+  jni_interface: true
   memory_model: zero_copy
-  gil_aware: true
-  error_propagation: native
+  exception_handling: native
   type_conversion: strict
+  gc_awareness: true
+  thread_safety: true
   
 debugging:
   level: 1

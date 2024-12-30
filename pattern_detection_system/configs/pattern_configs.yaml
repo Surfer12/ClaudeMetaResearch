@@ -39,17 +39,18 @@ pattern_detection:
       meta_level: very_high
 
 performance:
+  java:
+    thread_pool_size: 4
+    batch_processing: true
+    off_heap_memory: true
+    gc_optimization: G1GC
+    jni_optimization: true
+    
   mojo:
     parallel_processing: true
     simd_optimization: true
     cache_optimization: true
     memory_model: zero_copy
-    
-  python:
-    batch_size: 1000
-    threading: true
-    gpu_acceleration: true
-    memory_limit: 8GB
 
 monitoring:
   metrics:
@@ -65,18 +66,19 @@ monitoring:
 
 development:
   testing:
-    performance_benchmarks: true
+    junit_coverage: true
     integration_tests: true
     coverage_threshold: 0.9
+    jmh_benchmarks: true
     
   logging:
     level: INFO
-    format: detailed
+    format: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
     retention: 30d
     
   debugging:
     mojo_debug: true
-    python_debug: true
+    java_debug: true
     memory_tracking: true
 
 cultural_integration:
