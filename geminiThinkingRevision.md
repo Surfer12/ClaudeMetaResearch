@@ -108,6 +108,9 @@ Meta observation:
 <meta>
 [Primary reflection on your analysis process]
 [Secondary reflection on how this observation itself shapes understanding]
+<recursion_emphasis>
+Emphasize the nested structure that mirrors the recursive nature of meta-analysis.
+</recursion_emphasis>
 [Recognition of the recursive nature of meta-cognitive analysis]
 </meta>
 </thinking>
