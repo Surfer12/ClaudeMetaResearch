@@ -21,7 +21,7 @@ struct IntelligentCognitiveFramework:
         complexity: Float64
     ) -> T:
         """
-        Holistic intelligent processing of cognitive tasks
+        Holistic intelligent processing of cognitive tasks.
         """
         # Intelligent task processing pipeline
         var validated_input = self.memory_safety.mitigate_risk(input)
@@ -36,7 +36,7 @@ struct IntelligentCognitiveFramework:
 
     fn reset_framework(inout self):
         """
-        Reset all subsystems for a new learning cycle
+        Reset all subsystems for a new learning cycle.
         """
         self.cognitive_adaptation.reset_complexity_tracking()
         self.performance_optimization.reset_performance_tracking()
@@ -44,7 +44,7 @@ struct IntelligentCognitiveFramework:
 
     fn analyze_framework_performance(self) -> Dict[String, Float64]:
         """
-        Generate a comprehensive performance analysis
+        Generate a comprehensive performance analysis.
         """
         var performance_metrics = Dict[String, Float64]()
         

@@ -2,7 +2,7 @@ from src.core.framework_integration import IntelligentCognitiveFramework
 
 fn process_complex_data[T: AnyType](input: T, complexity: Float64) -> T:
     """
-    Demonstrate cognitive framework processing
+    Demonstrate cognitive framework processing.
     """
     var cognitive_framework = IntelligentCognitiveFramework()
     

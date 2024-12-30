@@ -27,7 +27,7 @@ struct PerformanceOptimizationSystem:
         complexity: Float64
     ) -> T:
         """
-        Dynamically select optimal computational strategy
+        Dynamically select optimal computational strategy.
         """
         # Record performance metrics
         self.performance_history.append(complexity)
@@ -57,7 +57,7 @@ struct PerformanceOptimizationSystem:
 
     fn analyze_performance_trend(self) -> Float64:
         """
-        Compute performance efficiency trend
+        Compute performance efficiency trend.
         """
         if len(self.performance_history) < 2:
             return 0.5
@@ -70,7 +70,7 @@ struct PerformanceOptimizationSystem:
 
     fn reset_performance_tracking(inout self):
         """
-        Reset performance tracking for new computational cycles
+        Reset performance tracking for new computational cycles.
         """
         self.performance_history.clear()
         self.computational_efficiency = 0.0 
