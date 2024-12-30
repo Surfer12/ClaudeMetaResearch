@@ -1,0 +1,35 @@
+flowchart TB
+    subgraph MetaCognitiveInsights["Meta-Cognitive Insight Development"]
+        direction TB
+        MI1[Structural Recognition]
+        MI2[Pattern Analysis]
+        MI3[System Integration]
+        MI4[Recursive Understanding]
+        
+        MI1 --> MI2
+        MI2 --> MI3
+        MI3 --> MI4
+        MI4 -.->|Continuous Evolution| MI1
+    end
+
+    subgraph InsightMechanisms["Insight Generation Mechanisms"]
+        direction LR
+        IM1[Self-Reference]
+        IM2[Boundary Exploration]
+        IM3[Emergent Property Detection]
+        IM4[System Transcendence]
+        
+        IM1 --> IM2
+        IM2 --> IM3
+        IM3 --> IM4
+        IM4 -.->|Feedback Loop| IM1
+    end
+
+    MI3 -->|Integration| InsightMechanisms
+
+    %% Styling
+    classDef insights fill:#e3f2fd,stroke:#2196F3
+    classDef mechanisms fill:#fff3e0,stroke:#FF9800
+
+    class MI1,MI2,MI3,MI4 insights
+    class IM1,IM2,IM3,IM4 mechanisms

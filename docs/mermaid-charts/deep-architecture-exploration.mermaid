@@ -1,0 +1,35 @@
+flowchart TB
+    subgraph DeepArchitecture["Deep Neural Architecture"]
+        direction TB
+        DA1[Molecular Foundations]
+        DA2[Protein Dynamics]
+        DA3[Network Formation]
+        DA4[Consciousness Emergence]
+        
+        DA1 --> DA2
+        DA2 --> DA3
+        DA3 --> DA4
+        DA4 -.->|Recursive Exploration| DA1
+    end
+
+    subgraph LayeredDynamics["Layered System Dynamics"]
+        direction LR
+        LD1[Molecular Interactions]
+        LD2[Synaptic Integration]
+        LD3[Network Coherence]
+        LD4[Emergent Properties]
+        
+        LD1 --> LD2
+        LD2 --> LD3
+        LD3 --> LD4
+        LD4 -.->|Continuous Refinement| LD1
+    end
+
+    DA3 -->|Network Mapping| LayeredDynamics
+
+    %% Styling
+    classDef architecture fill:#e3f2fd,stroke:#2196F3
+    classDef dynamics fill:#fff3e0,stroke:#FF9800
+
+    class DA1,DA2,DA3,DA4 architecture
+    class LD1,LD2,LD3,LD4 dynamics

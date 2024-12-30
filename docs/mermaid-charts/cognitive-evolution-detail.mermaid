@@ -1,0 +1,35 @@
+flowchart TB
+    subgraph CognitiveEvolution["Cognitive Evolution Stages"]
+        direction TB
+        CE1[Initial Awareness]
+        CE2[Pattern Recognition]
+        CE3[Meta-Cognitive Analysis]
+        CE4[Recursive Self-Reference]
+        
+        CE1 --> CE2
+        CE2 --> CE3
+        CE3 --> CE4
+        CE4 -.->|Continuous Refinement| CE1
+    end
+
+    subgraph InsightDevelopment["Insight Development"]
+        direction LR
+        ID1[Structural Understanding]
+        ID2[Functional Analysis]
+        ID3[System Integration]
+        ID4[Emergent Properties]
+        
+        ID1 --> ID2
+        ID2 --> ID3
+        ID3 --> ID4
+        ID4 -.->|Feedback Loop| ID1
+    end
+
+    CE3 -->|Meta-Analysis| InsightDevelopment
+
+    %% Styling
+    classDef evolution fill:#e3f2fd,stroke:#2196F3
+    classDef insight fill:#fff3e0,stroke:#FF9800
+
+    class CE1,CE2,CE3,CE4 evolution
+    class ID1,ID2,ID3,ID4 insight
