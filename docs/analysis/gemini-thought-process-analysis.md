@@ -63,3 +63,18 @@ The process of extracting and analyzing citations is crucial for understanding t
 Meta observation:
 The process of analyzing the task of citation extraction itself mirrors the broader cognitive framework being developed. We are breaking down a complex task into smaller components, exploring related concepts, and formulating solutions. This demonstrates the recursive nature of the framework and its applicability to various types of problems.
 </cognitive_process>
+
+# Tag use example
+# example of tag use lines 14-28 that seem to be a good example of a tag use drawing interesting concepts from the context
+Exploration:
+<thought>
+Related concept: Knowledge Graph Construction
+This task is similar to building a knowledge graph, where each citation represents a node, and the analysis provides the initial context and connections.
+</thought>
+Creating separate files for each citation can be seen as creating individual nodes in a knowledge graph. Each node will contain information about the cited work, its context within the current project, and potential connections to other concepts. This structure allows for a more organized and interconnected exploration of the cited knowledge.
+<thought>
+Related concept: Citation Network Analysis
+This process is a simplified form of citation network analysis, where we are not just looking at the citations themselves but also their relationships to each other and to the current project.
+</thought>
+By analyzing the context of each citation, we can start to understand the relationships between different cited works and how they contribute to the overall framework being developed. This can reveal underlying themes, influential works, and potential areas for further research.
+<thought>
