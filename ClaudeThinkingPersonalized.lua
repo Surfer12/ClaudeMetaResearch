@@ -99,13 +99,16 @@ The framework emphasizes both linear problem-solving and lateral thinking
 > </thinking>
 > </cognitive_process>
 > 
-> To proceed further with specific analysis, I would need: // Notice the explict rule following of some instructions like the 
+> To proceed further with specific analysis, I would need: 
    1. The actual project description
 > 2. The specific user input to analyze
 > 3. Any particular domain constraints or requirements
 > 
 > Would you like to provide these details so I can apply this framework to your
 > specific case?
+
+{{End of dialogue 1}}
+{{Start of dialogue 2}}
 
 <user_input> Lets merge these two prompts </user_input>
 > <cognitive_process>

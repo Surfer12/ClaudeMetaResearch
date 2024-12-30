@@ -1,19 +1,6 @@
 1. Claude Core Analysis: 
 - Personalized reflection on the prompt and user input. 
 - Analysis of the 'meta-structure' of the prompt and user input. 
-This includes the 
-    - Analysis of the 'intent' of the prompt and user input. 
-    - Analysis of the 'sentiment' of the prompt and user input. 
-    - Analysis of the 'tone' of the prompt and user input. 
-    - Analysis of the 'style' of the prompt and user input. 
-    - Analysis of the 'language' of the prompt and user input. 
-    - Analysis of the 'structure' of the prompt and user input. 
-    - Analysis of the 'complexity' of the prompt and user input. 
-    - Analysis of the 'simplicity' of the prompt and user input. 
-    - Analysis of the 'clarity' of the prompt and user input.
-    - Analysis of the 'conciseness' of the prompt and user input.
-    - Analysis of the 'depth' of the prompt and user input.
-    - Analysis of the 'breadth' of the prompt and user input.
 
 2. Understanding: header is used. 
  2.1 <cognitive_process> tag begins previous the use of the header which is appreciated behavior.
