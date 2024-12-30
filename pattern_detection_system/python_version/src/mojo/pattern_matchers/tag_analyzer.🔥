@@ -1,0 +1,152 @@
+from math import sqrt
+from algorithm import vectorize
+from sys.info import simdwidthof
+from time import now
+
+alias nelts = simdwidthof[DType.float32]() * 2
+
+struct TagPattern:
+    var pattern: String
+    var weight: Float32
+    var meta_level: Int
+    
+    fn __init__(inout self, pattern: String, weight: Float32, meta_level: Int):
+        self.pattern = pattern
+        self.weight = weight
+        self.meta_level = meta_level
+
+struct TagAnalyzer:
+    var traditional_pattern: TagPattern
+    var emergent_pattern: TagPattern
+    var bengali_pattern: TagPattern
+    var integrated_pattern: TagPattern
+    
+    fn __init__(inout self):
+        self.traditional_pattern = TagPattern("<thinking>.*?</thinking>", 1.0, 1)
+        self.emergent_pattern = TagPattern("<thought>.*?</thought>", 1.2, 2)
+        self.bengali_pattern = TagPattern("<.*?তহought>", 1.5, 3)
+        self.integrated_pattern = TagPattern("<meta_cognitive.*?>.*?</meta_cognitive>", 2.0, 4)
+    
+    fn analyze_text(self, text: String) -> TagAnalysisResult:
+        var result = TagAnalysisResult()
+        
+        # Sequential pattern matching for now
+        # Will optimize with SIMD later
+        if self._match_pattern(text, self.traditional_pattern.pattern):
+            result.pattern_found = True
+            result.weight = self.traditional_pattern.weight
+            result.meta_level = self.traditional_pattern.meta_level
+        
+        if self._match_pattern(text, self.emergent_pattern.pattern):
+            result.pattern_found = True
+            result.weight = max(result.weight, self.emergent_pattern.weight)
+            result.meta_level = max(result.meta_level, self.emergent_pattern.meta_level)
+            
+        if self._match_pattern(text, self.bengali_pattern.pattern):
+            result.pattern_found = True
+            result.weight = max(result.weight, self.bengali_pattern.weight)
+            result.meta_level = max(result.meta_level, self.bengali_pattern.meta_level)
+            
+        if self._match_pattern(text, self.integrated_pattern.pattern):
+            result.pattern_found = True
+            result.weight = max(result.weight, self.integrated_pattern.weight)
+            result.meta_level = max(result.meta_level, self.integrated_pattern.meta_level)
+        
+        return result
+    
+    fn _match_pattern(self, text: String, pattern: String) -> Bool:
+        # Simple substring search for now
+        # TODO: Implement Boyer-Moore with SIMD
+        if len(text) < len(pattern):
+            return False
+            
+        for i in range(len(text) - len(pattern) + 1):
+            var matches = True
+            for j in range(len(pattern)):
+                if text[i + j] != pattern[j]:
+                    matches = False
+                    break
+            if matches:
+                return True
+        return False
+    
+    fn calculate_confidence(self, text: String) -> Float32:
+        var total_weight: Float32 = 5.7  # Sum of all pattern weights
+        var matched_weight: Float32 = 0.0
+        
+        if self._match_pattern(text, self.traditional_pattern.pattern):
+            matched_weight += self.traditional_pattern.weight
+        if self._match_pattern(text, self.emergent_pattern.pattern):
+            matched_weight += self.emergent_pattern.weight
+        if self._match_pattern(text, self.bengali_pattern.pattern):
+            matched_weight += self.bengali_pattern.weight
+        if self._match_pattern(text, self.integrated_pattern.pattern):
+            matched_weight += self.integrated_pattern.weight
+        
+        return matched_weight / total_weight
+    
+    fn analyze_meta_level(self, text: String) -> Int:
+        var max_level = 0
+        
+        if self._match_pattern(text, self.traditional_pattern.pattern):
+            max_level = max(max_level, self.traditional_pattern.meta_level)
+        if self._match_pattern(text, self.emergent_pattern.pattern):
+            max_level = max(max_level, self.emergent_pattern.meta_level)
+        if self._match_pattern(text, self.bengali_pattern.pattern):
+            max_level = max(max_level, self.bengali_pattern.meta_level)
+        if self._match_pattern(text, self.integrated_pattern.pattern):
+            max_level = max(max_level, self.integrated_pattern.meta_level)
+            
+        # Additional meta-level indicators
+        if self._match_pattern(text, "meta") or self._match_pattern(text, "recursive"):
+            max_level += 1
+        if self._match_pattern(text, "self") or self._match_pattern(text, "reflection"):
+            max_level += 1
+            
+        return max_level
+
+struct TagAnalysisResult:
+    var pattern_found: Bool
+    var weight: Float32
+    var meta_level: Int
+    var confidence: Float32
+    
+    fn __init__(inout self):
+        self.pattern_found = False
+        self.weight = 0.0
+        self.meta_level = 0
+        self.confidence = 0.0
+    
+    fn __init__(inout self, pattern_found: Bool, weight: Float32, 
+                meta_level: Int, confidence: Float32):
+        self.pattern_found = pattern_found
+        self.weight = weight
+        self.meta_level = meta_level
+        self.confidence = confidence
+    
+    fn __copyinit__(inout self, existing: Self):
+        self.pattern_found = existing.pattern_found
+        self.weight = existing.weight
+        self.meta_level = existing.meta_level
+        self.confidence = existing.confidence
+
+fn benchmark_tag_analysis():
+    var analyzer = TagAnalyzer()
+    var test_text = String(
+        "<meta_cognitive>"
+        "    <thinking>Analysis of patterns</thinking>"
+        "    <thought>Meta-level exploration</thought>"
+        "    </ তহought>"
+        "</meta_cognitive>"
+    )
+    
+    var iterations = 1000
+    var start_time = now()
+    for i in range(iterations):
+        var result = analyzer.analyze_text(test_text)
+        var confidence = analyzer.calculate_confidence(test_text)
+        var meta_level = analyzer.analyze_meta_level(test_text)
+    var end_time = now()
+    
+    var avg_time = Float64(end_time - start_time) / Float64(iterations)
+    print("Average analysis time:", avg_time / 1e9, "seconds") 
