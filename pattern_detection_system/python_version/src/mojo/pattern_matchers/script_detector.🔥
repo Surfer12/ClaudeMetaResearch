@@ -1,0 +1,54 @@
+from memory import memcpy, memset
+from memory.unsafe import Pointer
+from python import Python
+from utils.vector import Vector
+
+struct ScriptDetector:
+    var lookup_table: Vector[UInt8]
+    var pattern_cache: Vector[String]
+    
+    fn __init__(inout self):
+        self.lookup_table = Vector[UInt8](256)
+        self.pattern_cache = Vector[String]()
+        self._init_lookup_table()
+    
+    fn _init_lookup_table(self):
+        # Initialize Bengali range
+        for i in range(0x0980, 0x09FF + 1):
+            if i < 256:
+                self.lookup_table[i] = 1
+                
+        # Initialize Devanagari range
+        for i in range(0x0900, 0x097F + 1):
+            if i < 256:
+                self.lookup_table[i] = 2
+    
+    @always_inline
+    fn detect_script(self, text: String) raises -> Int:
+        var bengali_count = 0
+        var devanagari_count = 0
+        
+        for c in text:
+            let idx = ord(c)
+            if idx < 256:
+                if self.lookup_table[idx] == 1:
+                    bengali_count += 1
+                elif self.lookup_table[idx] == 2:
+                    devanagari_count += 1
+        
+        if bengali_count > devanagari_count:
+            return 1  # Bengali
+        elif devanagari_count > bengali_count:
+            return 2  # Devanagari
+        return 0  # Latin/Other
+    
+    fn process_pattern(self, pattern: String) raises -> PythonObject:
+        let script = self.detect_script(pattern)
+        let py = Python.import_module("builtins")
+        
+        return py.dict({
+            "script": script,
+            "pattern": pattern,
+            "is_bengali": script == 1,
+            "is_devanagari": script == 2
+        }) 
