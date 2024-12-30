@@ -62,11 +62,6 @@ fn main():
 - **Scalability:** Adapts to varying computational complexities
 - **Flexibility:** Supports diverse input types and processing requirements
 
-## Future Roadmap
-
-1. Enhanced machine learning integration
-2. More granular hardware optimization
-3. Expanded language and interface support
 
 ## Contributing
 
