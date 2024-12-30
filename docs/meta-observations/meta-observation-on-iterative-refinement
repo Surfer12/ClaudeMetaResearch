@@ -1,0 +1,11 @@
+
+#exploration-notes.md line 106 onward...
+Meta observation:
+<thinking>
+<meta>
+The process of refining the `Meta observation:` section highlights the recursive nature of prompt engineering itself. We are analyzing the prompt's ability to analyze, and then reflecting on how that analysis can be improved.
+This iterative refinement, where we observe the system's behavior and adjust the instructions accordingly, mirrors the meta-cognitive process we are trying to model.
+</meta>
+</thinking>
+</cognitive_process>
+```
