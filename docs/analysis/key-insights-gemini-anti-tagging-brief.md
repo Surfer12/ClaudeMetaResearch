@@ -9,12 +9,13 @@ struct AntiTaggingInsights:
             "untagged": "Implicit through natural language",
             "hybrid": "Selective use for emphasis"
         }
+        self.meta_cognitive_elements = {}
         self.testing_implications = {
             "tagged": "Easier to parse and analyze",
             "untagged": "Requires more sophisticated NLP",
             "hybrid": "Balanced approach for testing"
         }
-    
+
     fn analyze_approach(self, approach: String) -> Dictionary[String, String]:
         """
         Provide a comprehensive analysis of a given approach
@@ -24,15 +25,15 @@ struct AntiTaggingInsights:
             "meta_cognitive_characteristics": self.meta_cognitive_elements.get(approach, "Undefined"),
             "testing_characteristics": self.testing_implications.get(approach, "Undefined")
         }
-    
-        fn compare_approaches(self) -> List[Dictionary[String, String]]:
+
+    fn compare_approaches(self) -> List[Dictionary[String, String]]:
         """
         Compare different tagging approaches
         """
-        var comparisons: List[Dictionary[String, String]] = ListDictionary[String, String]
+        var comparisons: List[Dictionary[String, String]] = List[Dictionary[String, String]]()
         for approach in ["tagged", "untagged", "hybrid"]:
             comparisons.append(self.analyze_approach(approach))
         return comparisons
 ```
 
-The conversion maintains the core insights while providing a more structured Mojo-based approach to analyzing tagging strategies.
+
