@@ -67,21 +67,16 @@ The framework emphasizes both linear problem-solving and lateral thinking
 > <thinking>
 > - The prompt integrates multiple cognitive frameworks:
 >   - Structured analytical thinking (reminiscent of Bloom's Taxonomy, Benjamin
-> Bloom, 1956) @cite Benjamin Bloom, 1956
-
->   - Systems thinking (as developed by Peter Senge, 1990) @cite Peter Senge, 1990
-
->   - Mental models (building on Kenneth Craik's work, 1943) @cite Kenneth Craik, 1943
-
+> Bloom, 1956) 
+>   - Systems thinking (as developed by Peter Senge, 1990) 
+>   - Mental models (building on Kenneth Craik's work, 1943)
 > </thinking>
 > 
 > Exploration:
 > <thought>
 > Related concept: The structure mirrors Design Thinking methodology (Stanford
-> d.school): @cite Stanford d.school
-
+> d.school)
 > - Understanding (Empathize)
-
 > - Analysis (Define)
 
 > - Exploration (Ideate)

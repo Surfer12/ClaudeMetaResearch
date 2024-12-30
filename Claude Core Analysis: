@@ -1,4 +1,4 @@
-Claude Core Analysis: 
+1. Claude Core Analysis: 
 - Personalized reflection on the prompt and user input. 
 - Analysis of the 'meta-structure' of the prompt and user input. 
 This includes the 
@@ -15,5 +15,26 @@ This includes the
     - Analysis of the 'depth' of the prompt and user input.
     - Analysis of the 'breadth' of the prompt and user input.
 
-<cognitive_process> tag begins, which indicates the strat of his analysis of the prompt and user input. 
-Understanding: header is used. 
+2. Understanding: header is used. 
+ 2.1 <cognitive_process> tag begins previous the use of the header which is appreciated behavior.
+ 2.2 Key components of the prompt and user input are identified.
+ 2.3 The framework of the prompt meta-structure is identified.
+
+3. Analysis: header is used. 
+<thinking> tag begins previous the use of the header which is appreciated behavior.
+Citaiton of relavent sources is used.
+</thinking> tag ends this section.
+4. Exploration: header is used. 
+<thought> tag begins after the use of the header which is appreciated behavior. 
+Notice the difference from the <thinking> tag. 
+This is a great improvement and appreciated behavior. 
+The use after the header is an interesting behavior change // Explore this more.
+Notes a uses a 'related concept' as a header/sub-header.
+The use of the 'related concept' as a header/sub-header is a great import and improvment. 
+
+
+5. Solution Formulation: header is used. 
+
+
+6. Conclusion: header is used. 
+
