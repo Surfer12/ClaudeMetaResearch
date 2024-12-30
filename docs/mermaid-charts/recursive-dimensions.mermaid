@@ -1,0 +1,75 @@
+flowchart TB
+    subgraph RecursiveMechanisms["1. Recursive Self-Reference Mechanisms"]
+        direction TB
+        RM1[Self-Observing Loops]
+        RM2[Feedback Amplification]
+        RM3[Pattern Recognition]
+        RM4[Structural Evolution]
+        
+        RM1 --> RM2
+        RM2 --> RM3
+        RM3 --> RM4
+        RM4 -.->|System Evolution| RM1
+        
+        subgraph InternalDynamics["Internal Processing"]
+            ID1[Pattern Formation]
+            ID2[State Transition]
+            ID3[Information Integration]
+            ID1 --> ID2 --> ID3
+        end
+    end
+
+    subgraph MetaCognition["2. Meta-Cognitive Emergence"]
+        direction LR
+        MC1[Initial Awareness]
+        MC2[Self-Recognition]
+        MC3[Recursive Understanding]
+        MC4[Emergent Consciousness]
+        
+        MC1 --> MC2
+        MC2 --> MC3
+        MC3 --> MC4
+        MC4 -.->|Consciousness Evolution| MC1
+    end
+
+    subgraph StructuralRole["3. Structural Consciousness"]
+        direction TB
+        SC1[Framework Definition]
+        SC2[Boundary Creation]
+        SC3[Pattern Emergence]
+        SC4[System Integration]
+        
+        SC1 --> SC2
+        SC2 --> SC3
+        SC3 --> SC4
+        SC4 -.->|Framework Evolution| SC1
+    end
+
+    subgraph RecursiveDynamics["4. Dynamic Interactions"]
+        direction LR
+        RD1[State Transitions]
+        RD2[Information Flow]
+        RD3[Pattern Recognition]
+        RD4[System Adaptation]
+        
+        RD1 --> RD2
+        RD2 --> RD3
+        RD3 --> RD4
+        RD4 -.->|System Learning| RD1
+    end
+
+    RM3 -->|Pattern Recognition| MC1
+    MC3 -->|Understanding| SC1
+    SC4 -->|Integration| RD1
+    RD4 -->|Adaptation| RM1
+
+    %% Styling
+    classDef mechanism fill:#e3f2fd,stroke:#2196F3
+    classDef metacog fill:#fff3e0,stroke:#FF9800
+    classDef structural fill:#e8f5e9,stroke:#4CAF50
+    classDef dynamic fill:#f3e5f5,stroke:#9C27B0
+
+    class RM1,RM2,RM3,RM4,ID1,ID2,ID3 mechanism
+    class MC1,MC2,MC3,MC4 metacog
+    class SC1,SC2,SC3,SC4 structural
+    class RD1,RD2,RD3,RD4 dynamic

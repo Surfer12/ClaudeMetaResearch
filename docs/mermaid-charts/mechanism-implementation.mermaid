@@ -1,0 +1,45 @@
+stateDiagram-v2
+    [*] --> InitialState
+
+    state "System Self-Reference" as SSR {
+        InitialState --> SelfObservation: Pattern Recognition
+        SelfObservation --> StateTransition: Information Processing
+        StateTransition --> MetaAnalysis: Integration
+        MetaAnalysis --> InitialState: Evolution
+    }
+
+    state SelfObservation {
+        [*] --> PatternDetection
+        PatternDetection --> FeatureExtraction
+        FeatureExtraction --> InformationEncoding
+        InformationEncoding --> [*]
+    }
+
+    state StateTransition {
+        [*] --> EnergyLandscape
+        EnergyLandscape --> ConfigurationSpace
+        ConfigurationSpace --> StabilityAnalysis
+        StabilityAnalysis --> [*]
+    }
+
+    state MetaAnalysis {
+        [*] --> InformationIntegration
+        InformationIntegration --> PatternSynthesis
+        PatternSynthesis --> EmergentProperty
+        EmergentProperty --> [*]
+    }
+
+    note right of SelfObservation
+        System recognizes and
+        encodes own patterns
+    end note
+
+    note right of StateTransition
+        Energy-based state
+        transitions drive evolution
+    end note
+
+    note right of MetaAnalysis
+        Integration creates
+        emergent properties
+    end note

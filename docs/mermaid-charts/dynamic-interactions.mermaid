@@ -1,0 +1,40 @@
+flowchart TB
+    subgraph InteractionDynamics["System Interactions"]
+        direction TB
+        ID1[State Recognition] --> ID2[Pattern Integration]
+        ID2 --> ID3[Information Flow]
+        ID3 --> ID4[System Adaptation]
+        ID4 -.->|Evolution| ID1
+        
+        subgraph InternalProcesses["Internal Processes"]
+            IP1[Energy Landscapes]
+            IP2[State Transitions]
+            IP3[Information Processing]
+            IP1 --> IP2 --> IP3
+        end
+    end
+
+    subgraph EmergentBehavior["Emergent Behavior"]
+        direction LR
+        EB1[Pattern Formation]
+        EB2[State Evolution]
+        EB3[System Integration]
+        EB4[Meta-Properties]
+        
+        EB1 --> EB2
+        EB2 --> EB3
+        EB3 --> EB4
+        EB4 -.->|Feedback| EB1
+    end
+
+    ID2 -->|Integration| EB1
+    EB4 -->|Feedback| ID1
+
+    %% Styling
+    classDef dynamics fill:#e3f2fd,stroke:#2196F3
+    classDef internal fill:#fff3e0,stroke:#FF9800
+    classDef emergent fill:#e8f5e9,stroke:#4CAF50
+
+    class ID1,ID2,ID3,ID4 dynamics
+    class IP1,IP2,IP3 internal
+    class EB1,EB2,EB3,EB4 emergent

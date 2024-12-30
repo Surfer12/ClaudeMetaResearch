@@ -1,0 +1,45 @@
+stateDiagram-v2
+    [*] --> InitialFramework
+
+    state "Framework Evolution" as FE {
+        InitialFramework --> ProteinMediated: Molecular Understanding
+        ProteinMediated --> NetworkDynamics: System Integration
+        NetworkDynamics --> MetaCognitive: Recursive Analysis
+        MetaCognitive --> EmergentProperties: System Evolution
+    }
+
+    state ProteinMediated {
+        [*] --> MolecularPathways
+        MolecularPathways --> InformationEncoding
+        InformationEncoding --> StateTransitions
+        StateTransitions --> [*]
+    }
+
+    state NetworkDynamics {
+        [*] --> PatternFormation
+        PatternFormation --> StateEvolution
+        StateEvolution --> SystemIntegration
+        SystemIntegration --> [*]
+    }
+
+    state MetaCognitive {
+        [*] --> SelfReference
+        SelfReference --> RecursiveAnalysis
+        RecursiveAnalysis --> EmergentUnderstanding
+        EmergentUnderstanding --> [*]
+    }
+
+    note right of ProteinMediated
+        Deep molecular understanding
+        drives system evolution
+    end note
+
+    note right of NetworkDynamics
+        Network dynamics emerge
+        from protein patterns
+    end note
+
+    note right of MetaCognitive
+        Meta-cognitive awareness
+        enables transcendence
+    end note

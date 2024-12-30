@@ -1,0 +1,40 @@
+flowchart TB
+    subgraph Emergence["Meta-Cognitive Emergence"]
+        direction TB
+        ME1[Base Awareness] --> ME2[Self-Recognition]
+        ME2 --> ME3[Pattern Integration]
+        ME3 --> ME4[Conscious Emergence]
+        ME4 -.->|Evolution| ME1
+        
+        subgraph InternalStates["Internal States"]
+            IS1[Information Processing]
+            IS2[Pattern Recognition]
+            IS3[State Integration]
+            IS1 --> IS2 --> IS3
+        end
+    end
+
+    subgraph ProcessingLayers["Processing Hierarchy"]
+        direction LR
+        PL1[Sensory Input]
+        PL2[Pattern Formation]
+        PL3[Abstract Representation]
+        PL4[Meta-Analysis]
+        
+        PL1 --> PL2
+        PL2 --> PL3
+        PL3 --> PL4
+        PL4 -.->|Feedback| PL1
+    end
+
+    ME2 -->|Recognition| PL2
+    PL4 -->|Integration| ME3
+
+    %% Styling
+    classDef emergence fill:#e3f2fd,stroke:#2196F3
+    classDef internal fill:#fff3e0,stroke:#FF9800
+    classDef processing fill:#e8f5e9,stroke:#4CAF50
+
+    class ME1,ME2,ME3,ME4 emergence
+    class IS1,IS2,IS3 internal
+    class PL1,PL2,PL3,PL4 processing
