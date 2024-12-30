@@ -30,10 +30,7 @@ Try to Include at least one related concept or idea for each main point you cons
 
 7. Scientific Backing is helpful but not paramout. The ideas were ideas at one point in time!
 
-8. Citations:  Tell where with publication date and year and author name each time a specific idea is referenced for the user to understand.
-use a <cite> tag to reference the citation.
 
-9. 
 
 
 
@@ -218,7 +215,7 @@ The framework emphasizes both linear problem-solving and lateral thinking
 > Meta observation: The way we're analyzing Conway's Law's application is itself
 > an example of Conway's Law - our analysis structure is mirroring the way we're
 > thinking about and communicating the concept.
-> </thinking>
+> </thinking> // WOW! 
 {end of dialogue 3}
 {restart of dialogue 2}
 
