@@ -1,4 +1,3 @@
-
 MONITORED_OPERATIONS:
   Logging_Levels:
     CRITICAL: 50    # Severe security events
@@ -36,9 +35,12 @@ MONITORED_OPERATIONS:
           - duration
           - exit_code
         analyze:
-          - pattern_matching
-          - frequency_analysis
-          - anomaly_detection
+          - pattern_matching:
+              risk_level: Medium
+          - frequency_analysis:
+              risk_level: Medium
+          - anomaly_detection:
+              risk_level: High
       
       resources:
         access_patterns:
@@ -46,9 +48,12 @@ MONITORED_OPERATIONS:
           - network_calls
           - api_requests
         permissions:
-          - elevation_attempts
-          - configuration_changes
-          - policy_modifications
+          - elevation_attempts:
+              risk_level: High
+          - configuration_changes:
+              risk_level: Medium
+          - policy_modifications:
+              risk_level: High
 
   Logging_Format:
     structured_data:
@@ -89,9 +94,21 @@ MONITORED_OPERATIONS:
       network_saturation: 75
     
     security_events:
-      failed_operations: 5/minute
-      permission_changes: 3/hour
-      suspicious_patterns: 10/hour
+      failed_operations:
+        threshold: 5/minute
+        risk_level: Medium
+      permission_changes:
+        threshold: 3/hour
+        risk_level: Medium
+      suspicious_patterns:
+        threshold: 10/hour
+        risk_level: High
+      anomaly_detection:
+        threshold: dynamic
+        model:
+          type: isolation_forest
+          sensitivity: 0.8
+        risk_level: High
 
   Reporting:
     real_time:
@@ -149,7 +166,8 @@ MONITORED_OPERATIONS:
 
   Analysis_Tools:
     pattern_detection:
-      - machine_learning_models
+      - machine_learning_models:
+          purpose: anomaly_detection, risk_scoring
       - statistical_analysis
       - behavior_profiling
     
