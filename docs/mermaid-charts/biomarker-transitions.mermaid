@@ -1,0 +1,33 @@
+flowchart TB
+    subgraph Primary["Primary Biomarkers"]
+        direction TB
+        B1[HRV RMSSD] --> BA[Biomarker Analysis]
+        B2[Ketones] --> BA
+        B3[Temperature] --> BA
+    end
+
+    subgraph Thresholds["Transition Thresholds"]
+        direction LR
+        T1[Low Threshold] --> T2[Optimal Range]
+        T2 --> T3[High Threshold]
+    end
+
+    subgraph States["State Classification"]
+        direction TB
+        S1[Restoration]
+        S2[Performance]
+        S3[Recovery]
+    end
+
+    BA --> Thresholds
+    Thresholds --> States
+    States --> |Feedback| BA
+
+    %% Styling
+    classDef biomarker fill:#e3f2fd,stroke:#2196F3
+    classDef threshold fill:#fff3e0,stroke:#FF9800
+    classDef state fill:#e8f5e9,stroke:#4CAF50
+    
+    class B1,B2,B3,BA biomarker
+    class T1,T2,T3 threshold
+    class S1,S2,S3 state

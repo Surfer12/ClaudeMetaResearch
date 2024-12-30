@@ -1,0 +1,45 @@
+stateDiagram-v2
+    [*] --> BaselineMetastability
+
+    state "Phase Transition Dynamics" as PTD {
+        BaselineMetastability --> PhaseShiftInitiation: Energy Threshold
+        PhaseShiftInitiation --> CriticalTransition: Reorganization
+        CriticalTransition --> NewMetastableState: Stabilization
+        NewMetastableState --> BaselineMetastability: Adaptation
+    }
+
+    state PhaseShiftInitiation {
+        [*] --> EnergyAccumulation
+        EnergyAccumulation --> ThresholdApproach
+        ThresholdApproach --> SystemInstability
+        SystemInstability --> [*]
+    }
+
+    state CriticalTransition {
+        [*] --> PatternDestabilization
+        PatternDestabilization --> RapidReorganization
+        RapidReorganization --> EmergentOrder
+        EmergentOrder --> [*]
+    }
+
+    state NewMetastableState {
+        [*] --> TemporaryStabilization
+        TemporaryStabilization --> DynamicEquilibrium
+        DynamicEquilibrium --> AdaptiveFluctuation
+        AdaptiveFluctuation --> [*]
+    }
+
+    note right of PhaseShiftInitiation
+        Energy accumulation leads to
+        system reorganization
+    end note
+
+    note right of CriticalTransition
+        Rapid phase transition with
+        emergent properties
+    end note
+
+    note right of NewMetastableState
+        Dynamic stability with
+        adaptive flexibility
+    end note

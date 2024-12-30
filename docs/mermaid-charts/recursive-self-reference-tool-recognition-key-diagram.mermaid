@@ -1,0 +1,50 @@
+flowchart TB
+    subgraph MetaCognition["Meta-Cognitive Layer"]
+        direction TB
+        M1[Tag System Recognition] --> M2[Self-Analysis Mechanism]
+        M2 --> M3[Understanding Enhancement]
+        M3 --> M4[Recursive Depth]
+        M4 -.->|Meta Loop| M1
+        
+        subgraph SelfReference["Self-Referential Process"]
+            SR1[Tool Recognition]
+            SR2[Tool as Subject]
+            SR3[Understanding of Understanding]
+            SR1 --> SR2 --> SR3
+        end
+    end
+
+    subgraph SystemicDynamics["Systems Integration"]
+        direction LR
+        S1[Pattern Recognition]
+        S2[Feedback Amplification]
+        S3[Emergent Properties]
+        S4[Structural Evolution]
+        
+        S1 --> S2 --> S3 --> S4
+        S4 -.->|System Evolution| S1
+    end
+
+    subgraph CognitiveEmergence["Cognitive Enhancement"]
+        direction TB
+        C1[Initial Framework]
+        C2[Enhanced Understanding]
+        C3[Recursive Insight]
+        C4[Meta-Awareness]
+        
+        C1 --> C2 --> C3 --> C4
+        C4 -.->|Framework Evolution| C1
+    end
+
+    M3 -->|Understanding Enhancement| S1
+    S3 -->|Pattern Recognition| C1
+    C4 -->|Meta-Cognitive Feed| M1
+
+    %% Styling
+    classDef meta fill:#e3f2fd,stroke:#2196F3
+    classDef system fill:#fff3e0,stroke:#FF9800
+    classDef cognitive fill:#e8f5e9,stroke:#4CAF50
+
+    class M1,M2,M3,M4,SR1,SR2,SR3 meta
+    class S1,S2,S3,S4 system
+    class C1,C2,C3,C4 cognitive

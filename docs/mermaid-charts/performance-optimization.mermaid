@@ -1,0 +1,46 @@
+flowchart TB
+    subgraph OptimalPerformance["Optimal Performance Zone"]
+        direction TB
+        OP1[Metastable Balance]
+        OP2[Adaptive Capacity]
+        OP3[Resource Efficiency]
+        
+        OP1 --> OP2
+        OP2 --> OP3
+        OP3 -.-> OP1
+    end
+
+    subgraph StateTransitions["State Transition Management"]
+        direction LR
+        ST1[Phase Detection]
+        ST2[Transition Timing]
+        ST3[Stability Restoration]
+        
+        ST1 --> ST2
+        ST2 --> ST3
+        ST3 -.-> ST1
+    end
+
+    subgraph AdaptiveControl["Adaptive Control System"]
+        direction TB
+        AC1[Resource Allocation]
+        AC2[Network Reconfiguration]
+        AC3[Performance Monitoring]
+        
+        AC1 --> AC2
+        AC2 --> AC3
+        AC3 -.-> AC1
+    end
+
+    OP1 --> ST1
+    ST2 --> AC2
+    AC3 --> OP3
+
+    %% Styling
+    classDef optimal fill:#e3f2fd,stroke:#2196F3
+    classDef transition fill:#fff3e0,stroke:#FF9800
+    classDef control fill:#e8f5e9,stroke:#4CAF50
+
+    class OP1,OP2,OP3 optimal
+    class ST1,ST2,ST3 transition
+    class AC1,AC2,AC3 control

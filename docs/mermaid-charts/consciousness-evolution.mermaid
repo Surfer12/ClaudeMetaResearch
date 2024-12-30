@@ -1,0 +1,51 @@
+flowchart TB
+    subgraph ConsciousnessLevels["Consciousness Evolution"]
+        direction TB
+        CL1[Individual Awareness]
+        CL2[Collective Understanding]
+        CL3[Cultural Integration]
+        CL4[Species Evolution]
+        
+        CL1 --> CL2
+        CL2 --> CL3
+        CL3 --> CL4
+        CL4 -.-> CL1
+    end
+
+    subgraph AdaptiveResponses["Adaptive Mechanisms"]
+        direction LR
+        AR1[Pattern Recognition]
+        AR2[Behavioral Modification]
+        AR3[Knowledge Transfer]
+        AR4[Systemic Integration]
+        
+        AR1 --> AR2
+        AR2 --> AR3
+        AR3 --> AR4
+        AR4 -.-> AR1
+    end
+
+    subgraph EvolutionaryOutcomes["Evolutionary Results"]
+        direction TB
+        EO1[Enhanced Awareness]
+        EO2[Improved Health]
+        EO3[Cultural Advancement]
+        EO4[Species Resilience]
+        
+        EO1 --> EO2
+        EO2 --> EO3
+        EO3 --> EO4
+        EO4 -.-> EO1
+    end
+
+    CL2 --> AR2
+    AR3 --> EO2
+
+    %% Styling
+    classDef consciousness fill:#e3f2fd,stroke:#2196F3
+    classDef adaptive fill:#fff3e0,stroke:#FF9800
+    classDef evolution fill:#e8f5e9,stroke:#4CAF50
+
+    class CL1,CL2,CL3,CL4 consciousness
+    class AR1,AR2,AR3,AR4 adaptive
+    class EO1,EO2,EO3,EO4 evolution

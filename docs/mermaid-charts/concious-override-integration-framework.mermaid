@@ -1,0 +1,46 @@
+flowchart TB
+    subgraph UserAgency["User Agency Layer"]
+        direction TB
+        UA1[Conscious Override]
+        UA2[State Selection]
+        UA3[Response Modulation]
+        
+        UA1 --> UA2
+        UA2 --> UA3
+        UA3 -.-> UA1
+    end
+
+    subgraph EmotionalProcessing["Emotional Processing Layer"]
+        direction LR
+        EP1[Signal Validation]
+        EP2[Pattern Recognition]
+        EP3[Response Integration]
+        
+        EP1 --> EP2
+        EP2 --> EP3
+        EP3 -.-> EP1
+    end
+
+    subgraph SystemResponse["System Response Layer"]
+        direction TB
+        SR1[Network Reconfiguration]
+        SR2[State Optimization]
+        SR3[Coherence Maintenance]
+        
+        SR1 --> SR2
+        SR2 --> SR3
+        SR3 -.-> SR1
+    end
+
+    UA2 --> EP2
+    EP3 --> SR1
+    SR3 --> UA1
+
+    %% Styling
+    classDef agency fill:#e3f2fd,stroke:#2196F3
+    classDef emotion fill:#fff3e0,stroke:#FF9800
+    classDef system fill:#e8f5e9,stroke:#4CAF50
+
+    class UA1,UA2,UA3 agency
+    class EP1,EP2,EP3 emotion
+    class SR1,SR2,SR3 system

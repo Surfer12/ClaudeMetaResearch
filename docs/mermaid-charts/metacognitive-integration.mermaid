@@ -1,0 +1,44 @@
+flowchart TB
+    subgraph MetacognitiveStates["Metacognitive Integration States"]
+        direction TB
+        MS1[Self-Reflection]
+        MS2[Performance Monitoring]
+        MS3[Learning Integration]
+        MS4[State Optimization]
+        
+        MS1 --> MS2
+        MS2 --> MS3
+        MS3 --> MS4
+        MS4 -.-> MS1
+    end
+
+    subgraph NetworkCoupling["Network Coupling Patterns"]
+        direction LR
+        NC1[DMN-TPN Coupling]
+        NC2[SN-ECN Coupling]
+        NC3[Cross-Network Integration]
+    end
+
+    subgraph EmergentProperties["Emergent System Properties"]
+        direction TB
+        EP1[Adaptive Flexibility]
+        EP2[Resource Optimization]
+        EP3[Learning Enhancement]
+    end
+
+    MS1 --> NC1
+    MS2 --> NC2
+    MS3 --> NC3
+    
+    NC1 --> EP1
+    NC2 --> EP2
+    NC3 --> EP3
+
+    %% Styling
+    classDef meta fill:#e3f2fd,stroke:#2196F3
+    classDef coupling fill:#fff3e0,stroke:#FF9800
+    classDef property fill:#e8f5e9,stroke:#4CAF50
+
+    class MS1,MS2,MS3,MS4 meta
+    class NC1,NC2,NC3 coupling
+    class EP1,EP2,EP3 property

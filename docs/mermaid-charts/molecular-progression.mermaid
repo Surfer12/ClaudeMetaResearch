@@ -1,0 +1,46 @@
+flowchart TB
+    subgraph L1[Level 1: Protein Dynamics]
+        direction TB
+        P1[Primary Structure] --> P2[Folding Patterns]
+        P2 --> P3[Conformational States]
+        P3 --> P4[Energy Landscapes]
+        P4 -.->|State Transitions| P1
+        
+        subgraph PrionStates[Prion State Dynamics]
+            PS1[Native State]
+            PS2[Misfolded State]
+            PS3[Aggregation State]
+            PS1 <--> PS2
+            PS2 --> PS3
+        end
+    end
+
+    subgraph L2[Level 2: Molecular Information]
+        direction LR
+        M1[Pattern Encoding] --> M2[Template Effects]
+        M2 --> M3[Signal Propagation]
+        M3 --> M4[State Memory]
+        M4 -.->|Information Feedback| M1
+    end
+
+    subgraph L3[Level 3: Local Networks]
+        direction TB
+        N1[Synaptic Integration]
+        N2[Local Circuits]
+        N3[Pattern Formation]
+        N4[State Emergence]
+        N1 --> N2 --> N3 --> N4
+        N4 -.->|Circuit Refinement| N1
+    end
+
+    P3 -->|Structural Information| M1
+    M3 -->|Pattern Transfer| N1
+
+    %% Styling
+    classDef protein fill:#e3f2fd,stroke:#2196F3
+    classDef molecular fill:#fff3e0,stroke:#FF9800
+    classDef network fill:#e8f5e9,stroke:#4CAF50
+
+    class P1,P2,P3,P4,PS1,PS2,PS3 protein
+    class M1,M2,M3,M4 molecular
+    class N1,N2,N3,N4 network

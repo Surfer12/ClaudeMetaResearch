@@ -1,0 +1,52 @@
+flowchart TB
+    subgraph Pathogenesis["Disease Evolution Patterns"]
+        direction TB
+        P1[Zoonotic Transfer]
+        P2[Antibiotic Resistance]
+        P3[Inflammatory Cascades]
+        P4[Epigenetic Modifications]
+        
+        P1 --> P2
+        P2 --> P3
+        P3 --> P4
+        P4 -.-> P1
+    end
+
+    subgraph CognitiveEvolution["Cognitive Schema Development"]
+        direction LR
+        C1[Pattern Recognition]
+        C2[Causal Attribution]
+        C3[Risk Assessment]
+        C4[Behavioral Adaptation]
+        
+        C1 --> C2
+        C2 --> C3
+        C3 --> C4
+        C4 -.-> C1
+    end
+
+    subgraph SystemicImpact["Systemic Health Implications"]
+        direction TB
+        S1[Microbiome Disruption]
+        S2[Immune Modulation]
+        S3[Neurological Impact]
+        S4[Metabolic Dysregulation]
+        
+        S1 --> S2
+        S2 --> S3
+        S3 --> S4
+        S4 -.-> S1
+    end
+
+    P2 --> C1
+    C3 --> S2
+    S4 --> P3
+
+    %% Styling
+    classDef pathogen fill:#e3f2fd,stroke:#2196F3
+    classDef cognitive fill:#fff3e0,stroke:#FF9800
+    classDef systemic fill:#e8f5e9,stroke:#4CAF50
+
+    class P1,P2,P3,P4 pathogen
+    class C1,C2,C3,C4 cognitive
+    class S1,S2,S3,S4 systemic

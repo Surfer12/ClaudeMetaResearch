@@ -1,0 +1,62 @@
+stateDiagram-v2
+    [*] --> MetabolicProcessing : System Initialization
+
+    state MetabolicProcessing {
+        direction TB
+        [*] --> ParasympatheticDominance : Initial State
+        ParasympatheticDominance --> PosturalAdaptation : Resource Mobilization
+        PosturalAdaptation --> MetabolicIntegration : Energy Optimization
+        MetabolicIntegration --> ParasympatheticDominance : Recursive Feedback
+        
+        note right of ParasympatheticDominance
+            Foundational Regulatory State
+            Highest Priority Mechanism
+        end note
+    }
+
+    state RecoveryIntegration {
+        direction TB
+        [*] --> SleepCycles : Restoration Phase
+        SleepCycles --> AminoAcidReplenishment : Cellular Repair
+        AminoAcidReplenishment --> NeuralReorganization : Synaptic Plasticity
+        NeuralReorganization --> SleepCycles : Continuous Integration
+        
+        note right of SleepCycles
+            Extended Integration Periods
+            Critical for System Recalibration
+        end note
+    }
+
+    state CognitiveFunction {
+        direction TB
+        [*] --> StateAssessment : Context Evaluation
+        StateAssessment --> ProcessingCapacity : Resource Allocation
+        ProcessingCapacity --> NetworkActivation : Functional Engagement
+        NetworkActivation --> StateAssessment : Adaptive Calibration
+        
+        note right of StateAssessment
+            Conditional Activation
+            Dynamic Threshold Mechanisms
+        end note
+    }
+
+    % State Transitions
+    MetabolicProcessing --> RecoveryIntegration : Resource Depletion
+    RecoveryIntegration --> CognitiveFunction : System Readiness
+    CognitiveFunction --> MetabolicProcessing : Performance Feedback
+
+    % Contextual Notes
+    note right of MetabolicProcessing
+        Foundational Control Mechanism
+        Parasympathetic Dominance Enforced
+    end note
+
+    note right of RecoveryIntegration
+        Systemic Restoration
+        Neural Plasticity Enhancement
+    end note
+
+    note right of CognitiveFunction
+        State-Dependent Activation
+        Adaptive Performance Modulation
+    end note

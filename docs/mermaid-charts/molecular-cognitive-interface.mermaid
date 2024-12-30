@@ -1,0 +1,45 @@
+stateDiagram-v2
+    [*] --> NormalFunction
+
+    state "Molecular-Cognitive Interface" as MCI {
+        NormalFunction --> StructuralModification: Protein Misfolding
+        StructuralModification --> NetworkAdaptation: Pathway Reorganization
+        NetworkAdaptation --> EmergentBehavior: System Response
+        EmergentBehavior --> NormalFunction: Homeostatic Attempt
+    }
+
+    state StructuralModification {
+        [*] --> ProteinMisfolding
+        ProteinMisfolding --> Aggregation
+        Aggregation --> TemplateEffect
+        TemplateEffect --> [*]
+    }
+
+    state NetworkAdaptation {
+        [*] --> PathwayDisruption
+        PathwayDisruption --> CompensatoryChange
+        CompensatoryChange --> NewEquilibrium
+        NewEquilibrium --> [*]
+    }
+
+    state EmergentBehavior {
+        [*] --> InformationProcessing
+        InformationProcessing --> SystemicResponse
+        SystemicResponse --> AdaptiveOutcome
+        AdaptiveOutcome --> [*]
+    }
+
+    note right of StructuralModification
+        Protein configuration changes
+        propagate through networks
+    end note
+
+    note right of NetworkAdaptation
+        Neural pathways reorganize
+        in response to disruption
+    end note
+
+    note right of EmergentBehavior
+        System-level adaptations
+        emerge from local changes
+    end note

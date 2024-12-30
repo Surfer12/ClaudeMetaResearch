@@ -1,0 +1,48 @@
+flowchart TB
+    subgraph InternalDialogue["Internal Dialogue Processing"]
+        direction TB
+        ID1[Rumination Patterns]
+        ID2[Emotional Valence]
+        ID3[Urgency Assessment]
+        ID4[Self-Referential Thought]
+        
+        ID1 --> ID2
+        ID2 --> ID3
+        ID3 --> ID4
+        ID4 -.-> ID1
+    end
+
+    subgraph NetworkResponse["Network State Response"]
+        direction LR
+        NR1[Default Mode Activation]
+        NR2[Salience Network Engagement]
+        NR3[Executive Control Modulation]
+        
+        NR1 <--> NR2
+        NR2 <--> NR3
+        NR3 -.-> NR1
+    end
+
+    subgraph AutonomicModulation["Autonomic Response Patterns"]
+        direction TB
+        AM1[Sympathetic Activation]
+        AM2[HRV Modulation]
+        AM3[Respiratory Entrainment]
+        
+        AM1 --> AM2
+        AM2 --> AM3
+        AM3 -.-> AM1
+    end
+
+    ID2 --> NR2
+    NR2 --> AM1
+    AM3 --> ID1
+
+    %% Styling
+    classDef dialogue fill:#e3f2fd,stroke:#2196F3
+    classDef network fill:#fff3e0,stroke:#FF9800
+    classDef autonomic fill:#e8f5e9,stroke:#4CAF50
+
+    class ID1,ID2,ID3,ID4 dialogue
+    class NR1,NR2,NR3 network
+    class AM1,AM2,AM3 autonomic

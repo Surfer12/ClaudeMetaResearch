@@ -1,0 +1,38 @@
+flowchart TB
+    subgraph MetabolicCore["Metabolic Core Processing"]
+        direction TB
+        M1[Ketone Dominance] --> ME[Metabolic Engine]
+        M2[Glucose Utilization] --> ME
+        M3[Fat Oxidation] --> ME
+        ME --> MS[Metabolic State]
+    end
+
+    subgraph StateControl["State Control System"]
+        direction LR
+        S1[Dawn State] --> S2[Peak State]
+        S2 --> S3[Recovery State]
+        S3 -.-> S1
+    end
+
+    subgraph NeuralDynamics["Neural Network Dynamics"]
+        direction TB
+        N1[Default Mode] 
+        N2[Task Positive]
+        N3[Salience Network]
+        N1 <--> N2
+        N2 <--> N3
+        N3 <--> N1
+    end
+
+    MetabolicCore --> StateControl
+    StateControl --> NeuralDynamics
+    NeuralDynamics --> |Feedback| MetabolicCore
+
+    %% Styling
+    classDef metabolic fill:#e3f2fd,stroke:#2196F3
+    classDef state fill:#fff3e0,stroke:#FF9800
+    classDef neural fill:#e8f5e9,stroke:#4CAF50
+    
+    class M1,M2,M3,ME,MS metabolic
+    class S1,S2,S3 state
+    class N1,N2,N3 neural

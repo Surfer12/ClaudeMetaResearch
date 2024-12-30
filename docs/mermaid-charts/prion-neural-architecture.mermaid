@@ -1,0 +1,52 @@
+flowchart TB
+    subgraph ProteinDynamics["Protein-Mediated Architecture"]
+        direction TB
+        P1[Native PrP Configuration]
+        P2[Misfolding Events]
+        P3[Aggregation Patterns]
+        P4[Structural Propagation]
+        
+        P1 --> P2
+        P2 --> P3
+        P3 --> P4
+        P4 -.->|Template Effect| P1
+    end
+
+    subgraph NeuralPathways["Neural Communication Architecture"]
+        direction LR
+        N1[Synaptic Transmission]
+        N2[Protein Scaffolding]
+        N3[Signal Integration]
+        N4[Network Plasticity]
+        
+        N1 --> N2
+        N2 --> N3
+        N3 --> N4
+        N4 -.->|Feedback Loop| N1
+    end
+
+    subgraph SystemicEffects["System-Wide Impact"]
+        direction TB
+        S1[Information Flow Disruption]
+        S2[Network Reorganization]
+        S3[Compensatory Mechanisms]
+        S4[Emergent Properties]
+        
+        S1 --> S2
+        S2 --> S3
+        S3 --> S4
+        S4 -.->|System Evolution| S1
+    end
+
+    P3 -->|Structure Modification| N2
+    N3 -->|Pathway Alteration| S2
+    S4 -->|System Adaptation| P1
+
+    %% Styling
+    classDef protein fill:#e3f2fd,stroke:#2196F3
+    classDef neural fill:#fff3e0,stroke:#FF9800
+    classDef systemic fill:#e8f5e9,stroke:#4CAF50
+
+    class P1,P2,P3,P4 protein
+    class N1,N2,N3,N4 neural
+    class S1,S2,S3,S4 systemic

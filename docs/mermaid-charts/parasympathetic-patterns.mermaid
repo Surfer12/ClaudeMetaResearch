@@ -1,0 +1,34 @@
+flowchart TB
+    subgraph Triggers["Parasympathetic Triggers"]
+        direction TB
+        T1[HRV Elevation] --> TA[Trigger Assessment]
+        T2[Temperature Drop] --> TA
+        T3[Respiratory Rate] --> TA
+    end
+
+    subgraph Response["Parasympathetic Response"]
+        direction LR
+        R1[Initial Response] --> R2[Sustained Activation]
+        R2 --> R3[Integration Phase]
+        R3 -.-> R1
+    end
+
+    subgraph Markers["System Markers"]
+        direction TB
+        M1[RMSSD > 80ms]
+        M2[Temp < 97.8°F]
+        M3[RR < 12/min]
+    end
+
+    TA --> Response
+    Response --> Markers
+    Markers --> |Feedback| TA
+
+    %% Styling
+    classDef trigger fill:#e3f2fd,stroke:#2196F3
+    classDef response fill:#fff3e0,stroke:#FF9800
+    classDef marker fill:#e8f5e9,stroke:#4CAF50
+    
+    class T1,T2,T3,TA trigger
+    class R1,R2,R3 response
+    class M1,M2,M3 marker

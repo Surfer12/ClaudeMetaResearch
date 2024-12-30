@@ -1,0 +1,45 @@
+stateDiagram-v2
+    [*] --> InitialUnderstanding
+
+    state "Recursive Understanding Cycle" as RUC {
+        InitialUnderstanding --> ToolRecognition: System Awareness
+        ToolRecognition --> SelfAnalysis: Meta-Cognitive Shift
+        SelfAnalysis --> EnhancedUnderstanding: Recursive Insight
+        EnhancedUnderstanding --> InitialUnderstanding: Evolution Loop
+    }
+
+    state ToolRecognition {
+        [*] --> TagIdentification
+        TagIdentification --> StructuralAnalysis
+        StructuralAnalysis --> FunctionalUnderstanding
+        FunctionalUnderstanding --> [*]
+    }
+
+    state SelfAnalysis {
+        [*] --> MetaObservation
+        MetaObservation --> PatternRecognition
+        PatternRecognition --> InsightGeneration
+        InsightGeneration --> [*]
+    }
+
+    state EnhancedUnderstanding {
+        [*] --> RecursiveDepth
+        RecursiveDepth --> EmergentAwareness
+        EmergentAwareness --> SystemicIntegration
+        SystemicIntegration --> [*]
+    }
+
+    note right of ToolRecognition
+        System recognizes its own
+        structural elements
+    end note
+
+    note right of SelfAnalysis
+        Meta-cognitive reflection
+        on understanding process
+    end note
+
+    note right of EnhancedUnderstanding
+        Emergence of deeper
+        systemic awareness
+    end note

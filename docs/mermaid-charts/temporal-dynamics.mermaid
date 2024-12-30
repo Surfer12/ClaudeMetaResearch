@@ -1,0 +1,45 @@
+stateDiagram-v2
+    [*] --> BaselineState
+    
+    state "Network Dynamics" as ND {
+        BaselineState --> SalienceActivation: Stimulus Detection
+        SalienceActivation --> TaskEngagement: Resource Allocation
+        TaskEngagement --> MetacognitiveIntegration: Performance Monitoring
+        MetacognitiveIntegration --> BaselineState: Reset
+    }
+
+    state SalienceActivation {
+        [*] --> ErrorDetection
+        ErrorDetection --> ResourceAllocation
+        ResourceAllocation --> NetworkSwitching
+        NetworkSwitching --> [*]
+    }
+
+    state TaskEngagement {
+        [*] --> CognitiveLoad
+        CognitiveLoad --> Performance
+        Performance --> Adaptation
+        Adaptation --> [*]
+    }
+
+    state MetacognitiveIntegration {
+        [*] --> SelfReflection
+        SelfReflection --> LearningConsolidation
+        LearningConsolidation --> StateOptimization
+        StateOptimization --> [*]
+    }
+
+    note right of SalienceActivation
+        Rapid detection and orientation
+        to relevant stimuli
+    end note
+
+    note right of TaskEngagement
+        Sustained attention and
+        performance optimization
+    end note
+
+    note right of MetacognitiveIntegration
+        Integration of experience and
+        learning consolidation
+    end note

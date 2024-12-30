@@ -1,0 +1,51 @@
+flowchart TB
+    subgraph QuantumLevel["Quantum Domain"]
+        direction TB
+        Q1[Wave Functions]
+        Q2[Tunneling Effects]
+        Q3[State Superposition]
+        Q4[Coherence Patterns]
+        
+        Q1 --> Q2
+        Q2 --> Q3
+        Q3 --> Q4
+        Q4 -.->|Quantum Effects| Q1
+    end
+
+    subgraph MolecularBridge["Classical-Quantum Interface"]
+        direction LR
+        B1[State Collapse]
+        B2[Energy Transfer]
+        B3[Information Encoding]
+        B4[Pattern Formation]
+        
+        B1 --> B2
+        B2 --> B3
+        B3 --> B4
+        B4 -.->|Feedback| B1
+    end
+
+    subgraph ClassicalDomain["Classical Effects"]
+        direction TB
+        C1[Protein States]
+        C2[Template Effects]
+        C3[Signal Propagation]
+        C4[Network Integration]
+        
+        C1 --> C2
+        C2 --> C3
+        C3 --> C4
+        C4 -.->|System Feedback| C1
+    end
+
+    Q4 --> B1
+    B4 --> C1
+
+    %% Styling
+    classDef quantum fill:#e3f2fd,stroke:#2196F3
+    classDef bridge fill:#fff3e0,stroke:#FF9800
+    classDef classical fill:#e8f5e9,stroke:#4CAF50
+
+    class Q1,Q2,Q3,Q4 quantum
+    class B1,B2,B3,B4 bridge
+    class C1,C2,C3,C4 classical

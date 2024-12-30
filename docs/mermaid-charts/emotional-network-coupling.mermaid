@@ -1,0 +1,45 @@
+stateDiagram-v2
+    [*] --> EmotionalTrigger
+
+    state "Emotional-Network Coupling" as ENC {
+        EmotionalTrigger --> NetworkModulation: Valence Assessment
+        NetworkModulation --> StateTransition: Response Pattern
+        StateTransition --> SystemIntegration: Adaptation
+        SystemIntegration --> EmotionalTrigger: Feedback Loop
+    }
+
+    state EmotionalTrigger {
+        [*] --> ValenceDetection
+        ValenceDetection --> UrgencyAssessment
+        UrgencyAssessment --> PatternRecognition
+        PatternRecognition --> [*]
+    }
+
+    state NetworkModulation {
+        [*] --> DefaultModeShift
+        DefaultModeShift --> SalienceActivation
+        SalienceActivation --> ExecutiveControl
+        ExecutiveControl --> [*]
+    }
+
+    state SystemIntegration {
+        [*] --> AutonomicResponse
+        AutonomicResponse --> CognitiveAlignment
+        CognitiveAlignment --> BehavioralOutput
+        BehavioralOutput --> [*]
+    }
+
+    note right of EmotionalTrigger
+        Internal dialogue initiates
+        network reconfiguration
+    end note
+
+    note right of NetworkModulation
+        Dynamic network response
+        based on emotional valence
+    end note
+
+    note right of SystemIntegration
+        Integration of cognitive
+        and autonomic responses
+    end note

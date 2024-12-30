@@ -1,0 +1,43 @@
+flowchart TB
+    subgraph MetastableStates["Metastable State Dynamics"]
+        direction TB
+        MS1[Semi-Stable State A\nEnergy Well] 
+        MS2[Transition Zone\nPhase Shift]
+        MS3[Semi-Stable State B\nEnergy Well]
+        
+        MS1 <--> |"Phase Transition\nEnergy Threshold"| MS2
+        MS2 <--> |"Phase Transition\nEnergy Threshold"| MS3
+    end
+
+    subgraph EnergyLandscape["Performance Energy Landscape"]
+        direction LR
+        EL1[Local Minima\nStable Performance]
+        EL2[Saddle Points\nFlexible Adaptation]
+        EL3[Global Optimization\nMetastable Balance]
+        
+        EL1 --> EL2
+        EL2 --> EL3
+    end
+
+    subgraph AdaptiveFlexibility["Adaptive Flexibility Mechanisms"]
+        direction TB
+        AF1[Resource Allocation]
+        AF2[Network Reconfiguration]
+        AF3[State Optimization]
+        
+        AF1 --> AF2
+        AF2 --> AF3
+        AF3 -.-> AF1
+    end
+
+    MS2 --> EL2
+    EL2 --> AF2
+
+    %% Styling
+    classDef state fill:#e3f2fd,stroke:#2196F3
+    classDef energy fill:#fff3e0,stroke:#FF9800
+    classDef adapt fill:#e8f5e9,stroke:#4CAF50
+
+    class MS1,MS2,MS3 state
+    class EL1,EL2,EL3 energy
+    class AF1,AF2,AF3 adapt

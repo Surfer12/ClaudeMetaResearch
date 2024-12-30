@@ -1,0 +1,45 @@
+stateDiagram-v2
+    [*] --> StructuralDefinition
+
+    state "Structure-Emergence Cycle" as SEC {
+        StructuralDefinition --> RecursiveEnablement: Framework Creation
+        RecursiveEnablement --> EmergentProperty: Pattern Recognition
+        EmergentProperty --> MetaCognition: Self Reference
+        MetaCognition --> StructuralDefinition: Framework Evolution
+    }
+
+    state StructuralDefinition {
+        [*] --> BoundaryCreation
+        BoundaryCreation --> PatternFormation
+        PatternFormation --> ConstraintDefinition
+        ConstraintDefinition --> [*]
+    }
+
+    state RecursiveEnablement {
+        [*] --> DepthExploration
+        DepthExploration --> SelfReference
+        SelfReference --> MetaAnalysis
+        MetaAnalysis --> [*]
+    }
+
+    state EmergentProperty {
+        [*] --> NoveltyGeneration
+        NoveltyGeneration --> PatternRecognition
+        PatternRecognition --> SystemEvolution
+        SystemEvolution --> [*]
+    }
+
+    note right of StructuralDefinition
+        Boundaries create space
+        for exploration
+    end note
+
+    note right of RecursiveEnablement
+        Structure enables
+        deeper recursion
+    end note
+
+    note right of EmergentProperty
+        Novel properties emerge
+        from constraints
+    end note

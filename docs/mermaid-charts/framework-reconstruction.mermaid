@@ -1,0 +1,36 @@
+flowchart TB
+    subgraph FrameworkAnalysis["Framework Analysis Process"]
+        direction TB
+        F1[Identify Core Components] --> F2[Map Dependencies]
+        F2 --> F3[Analyze Interactions]
+        F3 --> F4[Reconstruct Architecture]
+        F4 -.-> F1
+    end
+
+    subgraph ComponentEvaluation["Component Evaluation"]
+        direction LR
+        C1[Structural Analysis] --> C2[Functional Assessment]
+        C2 --> C3[Integration Points]
+        C3 --> C4[Optimization Paths]
+        C4 -.-> C1
+    end
+
+    subgraph SystemReconstruction["System Reconstruction"]
+        direction TB
+        R1[Base Architecture] --> R2[Component Integration]
+        R2 --> R3[System Validation]
+        R3 --> R4[Performance Optimization]
+        R4 -.-> R1
+    end
+
+    F3 --> C1
+    C4 --> R2
+
+    %% Styling
+    classDef analysis fill:#e3f2fd,stroke:#2196F3
+    classDef evaluation fill:#fff3e0,stroke:#FF9800
+    classDef reconstruction fill:#e8f5e9,stroke:#4CAF50
+
+    class F1,F2,F3,F4 analysis
+    class C1,C2,C3,C4 evaluation
+    class R1,R2,R3,R4 reconstruction

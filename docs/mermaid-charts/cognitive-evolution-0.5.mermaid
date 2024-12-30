@@ -1,0 +1,45 @@
+stateDiagram-v2
+    [*] --> PrimitiveAwareness
+
+    state "Cognitive Evolution Stages" as CES {
+        PrimitiveAwareness --> PatternRecognition: Disease Observation
+        PatternRecognition --> CausalUnderstanding: Knowledge Development
+        CausalUnderstanding --> SystemicAwareness: Integration
+        SystemicAwareness --> CollectiveConsciousness: Cultural Evolution
+    }
+
+    state PatternRecognition {
+        [*] --> ObservationalData
+        ObservationalData --> PatternIdentification
+        PatternIdentification --> BehavioralResponse
+        BehavioralResponse --> [*]
+    }
+
+    state CausalUnderstanding {
+        [*] --> HypothesisFormation
+        HypothesisFormation --> EvidenceGathering
+        EvidenceGathering --> TheoryDevelopment
+        TheoryDevelopment --> [*]
+    }
+
+    state SystemicAwareness {
+        [*] --> InterconnectionRecognition
+        InterconnectionRecognition --> ComplexityAppreciation
+        ComplexityAppreciation --> HolisticIntegration
+        HolisticIntegration --> [*]
+    }
+
+    note right of PatternRecognition
+        Disease patterns drive
+        cognitive evolution
+    end note
+
+    note right of CausalUnderstanding
+        Understanding emerges from
+        collective experience
+    end note
+
+    note right of SystemicAwareness
+        Holistic awareness shapes
+        behavioral adaptation
+    end note

@@ -1,0 +1,46 @@
+flowchart TB
+    subgraph NutritionalBase["Nutritional Foundation"]
+        direction TB
+        NB1[Plant-Based Nutrients]
+        NB2[Anti-Inflammatory Foods]
+        NB3[Metabolic Support]
+        
+        NB1 --> NB2
+        NB2 --> NB3
+        NB3 -.-> NB1
+    end
+
+    subgraph CognitiveSupport["Cognitive Enhancement"]
+        direction LR
+        CS1[Executive Function]
+        CS2[Memory Enhancement]
+        CS3[Attention Control]
+        
+        CS1 --> CS2
+        CS2 --> CS3
+        CS3 -.-> CS1
+    end
+
+    subgraph PharmaceuticalIntegration["Pharmaceutical Support"]
+        direction TB
+        PI1[Mood Stabilization]
+        PI2[Performance Enhancement]
+        PI3[Cognitive Optimization]
+        
+        PI1 --> PI2
+        PI2 --> PI3
+        PI3 -.-> PI1
+    end
+
+    NB2 --> CS1
+    CS2 --> PI2
+    PI3 --> NB1
+
+    %% Styling
+    classDef nutrition fill:#e3f2fd,stroke:#2196F3
+    classDef cognitive fill:#fff3e0,stroke:#FF9800
+    classDef pharma fill:#e8f5e9,stroke:#4CAF50
+
+    class NB1,NB2,NB3 nutrition
+    class CS1,CS2,CS3 cognitive
+    class PI1,PI2,PI3 pharma

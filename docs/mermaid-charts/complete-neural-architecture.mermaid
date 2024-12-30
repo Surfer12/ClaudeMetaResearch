@@ -1,0 +1,47 @@
+flowchart TB
+    subgraph L1["Level 1: Molecular Foundation"]
+        direction TB
+        M1[Protein Configuration] --> M2[Folding Dynamics]
+        M2 --> M3[Template Propagation]
+        M3 --> M4[Molecular Signaling]
+        M4 -.-> M1
+    end
+
+    subgraph L2["Level 2: Synaptic Integration"]
+        direction LR
+        S1[Signal Processing] --> S2[Neurotransmitter Release]
+        S2 --> S3[Receptor Activation]
+        S3 --> S4[Local Integration]
+        S4 -.-> S1
+    end
+
+    subgraph L3["Level 3: Network Architecture"]
+        direction TB
+        N1[Circuit Formation] --> N2[Pattern Recognition]
+        N2 --> N3[Information Flow]
+        N3 --> N4[Network Plasticity]
+        N4 -.-> N1
+    end
+
+    subgraph L4["Level 4: Cognitive Framework"]
+        direction LR
+        C1[State Emergence] --> C2[Conscious Processing]
+        C2 --> C3[Behavioral Output]
+        C3 --> C4[Adaptation Mechanisms]
+        C4 -.-> C1
+    end
+
+    M4 -->|Molecular Influence| S1
+    S4 -->|Synaptic Integration| N1
+    N4 -->|Network Effects| C1
+
+    %% Styling
+    classDef molecular fill:#e3f2fd,stroke:#2196F3
+    classDef synaptic fill:#fff3e0,stroke:#FF9800
+    classDef network fill:#e8f5e9,stroke:#4CAF50
+    classDef cognitive fill:#f3e5f5,stroke:#9C27B0
+
+    class M1,M2,M3,M4 molecular
+    class S1,S2,S3,S4 synaptic
+    class N1,N2,N3,N4 network
+    class C1,C2,C3,C4 cognitive

@@ -1,0 +1,40 @@
+flowchart TB
+    subgraph CoreNetworks["Core Network Domains"]
+        direction TB
+        SN[Salience Network\nError Detection\nResource Allocation]
+        DMN[Default Mode Network\nInternal Processing\nSelf-Reference]
+        TPN[Task Positive Network\nExternal Focus\nGoal-Directed]
+        ECN[Executive Control Network\nCognitive Control\nWorking Memory]
+    end
+
+    subgraph CrossDomainStates["Cross-Domain Integration States"]
+        direction LR
+        CS1[Flow State Integration]
+        CS2[Metacognitive Analysis]
+        CS3[Deep Learning State]
+    end
+
+    subgraph NetworkInteractions["Network Interaction Patterns"]
+        direction TB
+        NI1[Reciprocal Inhibition]
+        NI2[Cooperative Enhancement]
+        NI3[State-Dependent Coupling]
+    end
+
+    SN --> |Resource Allocation| CS1
+    DMN --> |Self-Reflection| CS2
+    TPN --> |Task Engagement| CS3
+    ECN --> |Control Modulation| CS1
+
+    CS1 --> NI2
+    CS2 --> NI3
+    CS3 --> NI1
+
+    %% Styling
+    classDef network fill:#e3f2fd,stroke:#2196F3
+    classDef state fill:#fff3e0,stroke:#FF9800
+    classDef interaction fill:#e8f5e9,stroke:#4CAF50
+
+    class SN,DMN,TPN,ECN network
+    class CS1,CS2,CS3 state
+    class NI1,NI2,NI3 interaction

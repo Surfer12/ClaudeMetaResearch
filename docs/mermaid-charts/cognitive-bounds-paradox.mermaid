@@ -1,0 +1,52 @@
+flowchart TB
+    subgraph StructuralBounds["Structural Boundaries"]
+        direction TB
+        SB1[Tag Definition]
+        SB2[Cognitive Framing]
+        SB3[Thought Containment]
+        SB4[Pattern Recognition]
+        
+        SB1 --> SB2
+        SB2 --> SB3
+        SB3 --> SB4
+        SB4 -.->|Constraint Feed| SB1
+    end
+
+    subgraph RecursiveDepth["Recursive Enablement"]
+        direction LR
+        RD1[Meta Analysis]
+        RD2[Self Reference]
+        RD3[Pattern Emergence]
+        RD4[Depth Enhancement]
+        
+        RD1 --> RD2
+        RD2 --> RD3
+        RD3 --> RD4
+        RD4 -.->|Depth Feed| RD1
+    end
+
+    subgraph EmergentDynamics["Emergent Properties"]
+        direction TB
+        ED1[Novel Patterns]
+        ED2[Cognitive Bridges]
+        ED3[Understanding Layers]
+        ED4[Meta Recognition]
+        
+        ED1 --> ED2
+        ED2 --> ED3
+        ED3 --> ED4
+        ED4 -.->|Evolution| ED1
+    end
+
+    SB3 -->|Enabling Structure| RD1
+    RD3 -->|Pattern Recognition| ED1
+    ED4 -->|Framework Evolution| SB1
+
+    %% Styling
+    classDef bounds fill:#e3f2fd,stroke:#2196F3
+    classDef recursive fill:#fff3e0,stroke:#FF9800
+    classDef emergent fill:#e8f5e9,stroke:#4CAF50
+
+    class SB1,SB2,SB3,SB4 bounds
+    class RD1,RD2,RD3,RD4 recursive
+    class ED1,ED2,ED3,ED4 emergent

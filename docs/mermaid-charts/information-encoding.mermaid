@@ -1,0 +1,51 @@
+flowchart TB
+    subgraph StructuralEncoding["Structural Information Encoding"]
+        direction TB
+        SE1[Conformational States]
+        SE2[Energy Distributions]
+        SE3[Pattern Templates]
+        SE4[State Memory]
+        
+        SE1 --> SE2
+        SE2 --> SE3
+        SE3 --> SE4
+        SE4 -.->|Feedback| SE1
+    end
+
+    subgraph PropagationMechanisms["Information Propagation"]
+        direction LR
+        PM1[Wave Formation]
+        PM2[State Transfer]
+        PM3[Pattern Replication]
+        PM4[Integration]
+        
+        PM1 --> PM2
+        PM2 --> PM3
+        PM3 --> PM4
+        PM4 -.->|Cycle| PM1
+    end
+
+    subgraph EmergentProperties["Information Emergence"]
+        direction TB
+        EP1[Local Patterns]
+        EP2[Circuit Formation]
+        EP3[Network States]
+        EP4[Global Integration]
+        
+        EP1 --> EP2
+        EP2 --> EP3
+        EP3 --> EP4
+        EP4 -.->|Feedback| EP1
+    end
+
+    SE3 --> PM1
+    PM4 --> EP1
+
+    %% Styling
+    classDef structural fill:#e3f2fd,stroke:#2196F3
+    classDef propagation fill:#fff3e0,stroke:#FF9800
+    classDef emergent fill:#e8f5e9,stroke:#4CAF50
+
+    class SE1,SE2,SE3,SE4 structural
+    class PM1,PM2,PM3,PM4 propagation
+    class EP1,EP2,EP3,EP4 emergent

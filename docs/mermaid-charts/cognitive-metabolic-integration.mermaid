@@ -1,0 +1,59 @@
+flowchart TB
+    subgraph EmotionalTriggers["Emotional Craving System"]
+        direction TB
+        ET1[Food Craving Trigger]
+        ET2[Emotional Valence]
+        ET3[Reward Anticipation]
+        
+        ET1 --> ET2
+        ET2 --> ET3
+        ET3 -.-> ET1
+    end
+
+    subgraph LogicalOverride["Cognitive Override System"]
+        direction LR
+        LO1[Nutritional Analysis]
+        LO2[Health Impact Assessment]
+        LO3[Alternative Selection]
+        
+        LO1 --> LO2
+        LO2 --> LO3
+        LO3 -.-> LO1
+    end
+
+    subgraph SystemicEffects["Systemic Health Impact"]
+        direction TB
+        SE1[Inflammatory Response]
+        SE2[Metabolic Function]
+        SE3[Cognitive Performance]
+        
+        SE1 --> SE2
+        SE2 --> SE3
+        SE3 -.-> SE1
+    end
+
+    subgraph OptimizationPath["Cognitive Enhancement"]
+        direction TB
+        OP1[Nutrient Optimization]
+        OP2[Pharmaceutical Integration]
+        OP3[Performance Monitoring]
+        
+        OP1 --> OP2
+        OP2 --> OP3
+        OP3 -.-> OP1
+    end
+
+    ET2 --> LO1
+    LO3 --> SE2
+    SE3 --> OP1
+
+    %% Styling
+    classDef emotional fill:#e3f2fd,stroke:#2196F3
+    classDef logical fill:#fff3e0,stroke:#FF9800
+    classDef systemic fill:#e8f5e9,stroke:#4CAF50
+    classDef optimization fill:#f3e5f5,stroke:#9C27B0
+
+    class ET1,ET2,ET3 emotional
+    class LO1,LO2,LO3 logical
+    class SE1,SE2,SE3 systemic
+    class OP1,OP2,OP3 optimization

@@ -1,0 +1,45 @@
+stateDiagram-v2
+    [*] --> NativeState
+
+    state "Energy Landscape Navigation" as ELN {
+        NativeState --> IntermediateState: Energy Input
+        IntermediateState --> TemplateState: Pattern Formation
+        TemplateState --> PropagationState: Information Transfer
+        PropagationState --> NativeState: Reset Cycle
+    }
+
+    state IntermediateState {
+        [*] --> EnergyAccumulation
+        EnergyAccumulation --> ConformationalSearch
+        ConformationalSearch --> StableConfiguration
+        StableConfiguration --> [*]
+    }
+
+    state TemplateState {
+        [*] --> PatternRecognition
+        PatternRecognition --> StructuralAlignment
+        StructuralAlignment --> InformationEncoding
+        InformationEncoding --> [*]
+    }
+
+    state PropagationState {
+        [*] --> InitialTransfer
+        InitialTransfer --> WavePropagation
+        WavePropagation --> StateStabilization
+        StateStabilization --> [*]
+    }
+
+    note right of IntermediateState
+        Quantum effects influence
+        state transitions
+    end note
+
+    note right of TemplateState
+        Information encoding via
+        structural patterns
+    end note
+
+    note right of PropagationState
+        Wave-like propagation
+        of state changes
+    end note
