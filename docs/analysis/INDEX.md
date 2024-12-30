@@ -66,19 +66,44 @@ Higher-level analysis and theoretical foundations.
 ## Key Findings & Patterns
 
 ### Tag Usage Evolution
-```xml
-<!-- Traditional -->
-<thinking>analysis</thinking>
-
-<!-- Emergent -->
-<thought>analysis</thought>
-</ তহought>
-
-<!-- Integrated -->
-<meta_cognitive type="boundary_exploration">
-    <thought script="latin">analysis</thought>
-    <thought script="bengali">বিশ্লেষণ</thought>
-</meta_cognitive>
+```mojo
+struct TagEvolutionAnalyzer:
+    var tag_patterns: Dictionary[String, List[String]]
+    
+    fn __init__(inout self):
+        self.tag_patterns = {
+            "traditional": ["<thinking>analysis</thinking>"],
+            "emergent": ["<thought>analysis</thought>", "</ তহought>"],
+            "integrated": [
+                "<meta_cognitive type=\"boundary_exploration\">",
+                "    <thought script=\"latin\">analysis</thought>",
+                "    <thought script=\"bengali\">বিশ্লেষণ</thought>",
+                "</meta_cognitive>"
+            ]
+        }
+    
+    fn analyze_evolution(self, tag_pattern: String) -> Dictionary[String, String]:
+        """
+        Analyze the evolution stage of a tag pattern
+        """
+        for stage, patterns in self.tag_patterns.items():
+            if tag_pattern in patterns:
+                return {
+                    "stage": stage,
+                    "complexity": self.calculate_complexity(stage)
+                }
+        return {"stage": "unknown", "complexity": "undefined"}
+    
+    fn calculate_complexity(self, stage: String) -> String:
+        """
+        Calculate the complexity of a tag stage
+        """
+        let complexity_map = {
+            "traditional": "low",
+            "emergent": "medium",
+            "integrated": "high"
+        }
+        return complexity_map.get(stage, "undefined")
 ```
 
 ### Pattern Contradictions
