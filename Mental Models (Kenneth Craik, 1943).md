@@ -1,0 +1,4 @@
+Mental Models (Kenneth Craik, 1943)
+
+Initial Analysis:
+This citation points to Kenneth Craik's pioneering work on mental models, which posits that the mind constructs internal representations of external reality. It's mentioned alongside Bloom's Taxonomy and systems thinking in the `<thinking>` tag of the Analysis section in "ClaudeThinkingPersonalized.lua". This suggests that the cognitive framework acknowledges the role of mental models in shaping our understanding and decision-making. The framework likely encourages the development of accurate and comprehensive mental models to improve problem analysis and solution formulation. 
