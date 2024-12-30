@@ -1,0 +1,13 @@
+The key insights about pattern relationships between tagged and untagged approaches are:
+Structural Evolution
+Tagged: Explicit structure but potentially constraining
+Untagged: Natural flow but less formal organization
+Hybrid: Best of both worlds with context-sensitive structure
+Meta-Cognitive Elements
+Tagged: Clear markers for thought processes
+Untagged: Implicit through natural language
+Hybrid: Selective use for emphasis
+Testing Implications
+Tagged: Easier to parse and analyze
+Untagged: Requires more sophisticated NLP
+Hybrid: Balanced approach for testing
