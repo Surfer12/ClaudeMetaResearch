@@ -16,4 +16,4 @@ Choose the customization approach that best fits your project's needs
 Extend the base CognitiveFramework class
 Implement project-specific logic in the extended methods
 Add logging and error handling
-Test thoroughly with your specific use cases
+Test thoroughly with your specific use cases 
