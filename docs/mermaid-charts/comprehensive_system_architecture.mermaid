@@ -1,0 +1,74 @@
+graph TB
+    subgraph Core["Core System"]
+        direction TB
+        VC["VisitorCoordinator"]
+        SC["SharedContext"]
+        VP["VisitorPipeline"]
+    end
+
+    subgraph Observers["Observer System"]
+        direction TB
+        OS["ObserverSubject"]
+        OC["ObservationCoordinator"]
+        subgraph ObserverTypes["Observer Types"]
+            SO["StateObserver"]
+            TO["TransformationObserver"]
+            BO["BoundaryObserver"]
+        end
+    end
+
+    subgraph Visitors["Visitor System"]
+        direction TB
+        VF["VisitorFactory"]
+        subgraph VisitorTypes["Visitor Types"]
+            VV["ValidationVisitor"]
+            PV["ParsingVisitor"]
+            TV["TransformationVisitor"]
+            CV["CompositionalVisitor"]
+            IV["InteractiveVisitor"]
+        end
+    end
+
+    subgraph Utils["Utility Packages"]
+        direction TB
+        EH["ExceptionHandler"]
+        DL["DiagnosticLogger"]
+        SM["StateManager"]
+        TH["TestHarness"]
+    end
+
+    %% Core to Observer Connections
+    SC -->|"notifies"| OS
+    OC -->|"updates"| SC
+
+    %% Observer Type Connections
+    OS -->|"broadcasts to"| SO
+    OS -->|"broadcasts to"| TO
+    OS -->|"broadcasts to"| BO
+
+    %% Core to Visitor Connections
+    VC -->|"manages"| VF
+    VF -->|"creates"| VisitorTypes
+
+    %% Utility Connections
+    EH -->|"monitors"| Core
+    EH -->|"monitors"| Observers
+    EH -->|"monitors"| Visitors
+    
+    DL -->|"logs"| Core
+    DL -->|"logs"| Observers
+    DL -->|"logs"| Visitors
+
+    SM -->|"manages state"| SC
+    TH -->|"tests"| Core
+
+    %% Visitor Coordination
+    VF -->|"configures"| CV
+    CV -->|"composes"| VV
+    CV -->|"composes"| PV
+    CV -->|"composes"| TV
+
+    style Core fill:#f9f,stroke:#333
+    style Observers fill:#bbf,stroke:#333
+    style Visitors fill:#bfb,stroke:#333
+    style Utils fill:#ffb,stroke:#333

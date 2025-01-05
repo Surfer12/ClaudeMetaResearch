@@ -1,0 +1,43 @@
+graph TB
+    subgraph Coordination["Visitor Coordination"]
+        VC["VisitorCoordinator"]
+        SC["SharedContext"]
+        VP["VisitorPipeline"]
+    end
+
+    subgraph Visitors["Visitor Types"]
+        V1["ValidationVisitor"]
+        V2["ParsingVisitor"]
+        V3["TransformationVisitor"]
+        CV["CompositionalVisitor"]
+        IV["InteractiveVisitor"]
+    end
+
+    subgraph States["Shared States"]
+        VS["ValidationState"]
+        PS["ParsingState"]
+        TS["TransformationState"]
+    end
+
+    VC -->|"coordinates"| V1
+    VC -->|"coordinates"| V2
+    VC -->|"coordinates"| V3
+    VC -->|"maintains"| SC
+
+    CV -->|"composes"| V1
+    CV -->|"composes"| V2
+    CV -->|"composes"| V3
+
+    IV -->|"interacts"| VC
+
+    SC -->|"contains"| VS
+    SC -->|"contains"| PS
+    SC -->|"contains"| TS
+
+    VP -->|"sequences"| V1
+    VP -->|"sequences"| V2
+    VP -->|"sequences"| V3
+
+    style Coordination fill:#f9f,stroke:#333
+    style Visitors fill:#bbf,stroke:#333
+    style States fill:#bfb,stroke:#333

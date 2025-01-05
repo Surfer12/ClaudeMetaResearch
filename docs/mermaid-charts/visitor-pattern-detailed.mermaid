@@ -1,0 +1,29 @@
+classDiagram
+    class Element {
+        <<interface>>
+        +accept(Visitor)
+    }
+    
+    class ConcreteElement {
+        +accept(Visitor)
+        +operationA()
+        +operationB()
+    }
+    
+    class Visitor {
+        <<interface>>
+        +visitConcreteElement(ConcreteElement)
+    }
+    
+    class ConcreteVisitor {
+        +visitConcreteElement(ConcreteElement)
+        -specificOperation()
+    }
+    
+    Element <|.. ConcreteElement : implements
+    Visitor <|.. ConcreteVisitor : implements
+    ConcreteElement --> Visitor : accepts
+    
+    note for Element "accept(visitor) {\n  visitor.visit(this)\n}"
+    
+    note for Visitor "Defines an operation for\neach concrete element type"
