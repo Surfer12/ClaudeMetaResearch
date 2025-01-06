@@ -1,0 +1,1 @@
+Minimizing the KL divergence with the distibution of gama 27b - knowledge distillation here rather than of 

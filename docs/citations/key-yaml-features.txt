@@ -1,0 +1,5 @@
+Key Features
+	•	Human-Readable: Syntax is clean and minimalistic, resembling natural language structures.
+	•	Hierarchical Structure: Supports nested data structures through indentation.
+	•	Data Types: Handles scalars (strings, numbers, booleans), sequences (lists), and mappings (dictionaries).
+	•	Extensible: Supports custom data types and complex structures.

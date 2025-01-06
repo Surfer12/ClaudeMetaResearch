@@ -1,0 +1,37 @@
+prompt_design:
+  introduction:
+    - "I'm usually averse to the common habit of trying to find old-world analogues to new-world phenomena."
+    - "However, let me present the case for why prompting should be called prompt design and be likened to web design."
+    - "I view prompting as communicating with a time-constrained human."
+  similarities_with_web_design:
+    - "Prompting and web design both require clarity, with communication as the primary goal."
+    - "Both need to respond to dynamic content, unlike writing or magazine layout."
+    - "Both need to adapt their content to different sizes — screen sizes for web design, context windows for prompting."
+  developer_preferences:
+    - "Looking at the actual prompt is super important, just like looking at the rendered website."
+    - "It is hard to write good prompts without looking at the rendered output of a prompt with all input variables filled in."
+    - "Composable components are useful in both prompting and web design."
+    - "Declarative is better than imperative for both."
+    - "Sometimes, pixel perfection matters in both cases (e.g., in ensuring formatting is precise with GPT-3.5 models)."
+  agent_prompting_as_web_design:
+    - "For LLM agents, agent prompting can be seen as building an interactive website for agents, where they can 'click buttons' by calling functions, and the prompt re-renders in response to a function call."
+  differences_with_web_design:
+    - "Prompting deals with text only (for now!)."
+    - "Caching is different: for agents, you want to make sure that your re-renders are cheap by only changing the later parts of the prompt."
+    - "Caching in web design is quite a different challenge."
+  conclusion:
+    - "The similarities convinced me that prompting should be called prompt design, not prompt engineering."
+    - "Writing a prompt feels like designing a website and should thus be named the same way."
+  priompt_library:
+    - "Priompt is a prompt design library inspired by modern web design principles."
+    - "It uses JSX to create prompts in a way that is more ergonomic than string templates."
+    - "It includes a preview website to test prompts on real data."
+  caveats:
+    - "Pixel-perfect designs may become unimportant for newer models like GPT-4 and GPT-4.5."
+    - "The context window constraint might disappear with long-context models."
+    - "OpenAI appears to be moving towards offering less control over the prompt."
+    - "Caching might become one of the most important aspects of prompting."
+    - "Prompt design could be too low-level, and higher-level frameworks or compilers (e.g., langchain) might take over."
+  final_note:
+    - "At Anysphere, we're building Cursor, an AI-first code editor. We're looking for exceptional people to join us."
+    - "Contact: arvid@anysphere.co"
