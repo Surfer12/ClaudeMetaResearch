@@ -1,0 +1,53 @@
+# Cursor Rules for File Renaming Strategy
+
+## Overview
+This ruleset defines the approach to renaming files in the ClaudeMetaResearch project,
+focusing on enhancing cognitive understanding and traceability of research documentation.
+
+## Naming Conventions
+- Use descriptive, meaningful names that reflect document content
+- Prioritize cognitive processes and meta-reflection in naming
+- Maintain a consistent naming pattern across files
+- Include version information when applicable
+- Use hyphen-separated lowercase words
+
+## File Naming Principles
+1. Cognitive Process Emphasis
+   - Highlight meta-cognitive aspects
+   - Capture iterative and adaptive design approaches
+   - Reflect conceptual emergence and flexibility
+
+2. Structural Clarity
+   - Provide clear indication of document purpose
+   - Use prefixes that describe the primary focus
+     - `prompt-engineering-`
+     - `meta-cognitive-`
+     - `cognitive-monitoring-`
+     - `yaml-`
+
+3. Version and Iteration Tracking
+   - Include version numbers (e.g., `-v1`, `-v2`)
+   - Use suffixes to indicate document type or focus
+
+## Recommended Prefixes
+- `prompt-engineering-`: Prompt design and refinement documents
+- `meta-cognitive-`: Meta-analysis and reflective documents
+- `cognitive-monitoring-`: Documents related to cognitive process monitoring
+- `yaml-`: Documents focusing on YAML structure or representation
+- `framework-`: Documents describing conceptual or technical frameworks
+
+## Rationale
+The renaming strategy aims to:
+- Improve document discoverability
+- Enhance understanding of document content at a glance
+- Facilitate knowledge management
+- Support recursive and meta-cognitive research approaches
+
+## Future Improvements
+- Regularly review and refine naming conventions
+- Develop a comprehensive taxonomy for document naming
+- Create guidelines for naming across different research domains
+
+## Contact
+For questions or suggestions about the file naming strategy,
+contact the project lead or documentation team.
