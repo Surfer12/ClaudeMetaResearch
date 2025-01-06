@@ -1,0 +1,71 @@
+
+process:
+  initial_understanding:  # Tag: Initial Understanding
+    description: Begin by grasping the core elements of the input.
+    action: Use YAML keys to highlight key concepts and initial interpretations.
+    example:
+      understanding: "The user wants a system prompt for free-flowing structural analysis."
+  structural_analysis: # Tag: Structural Analysis
+    description: Break down the information into its constituent parts.
+    action: Employ YAML keys that reflect the type of analysis you're performing.
+    examples:
+      component_identification: "The request has two main parts: 'free-flowing' and 'structural analysis'."
+      relationship_mapping: "These two parts might seem contradictory, requiring a balance between flexibility and structure."
+  exploration_and_ideation: # Tag: Exploration and Ideation
+    description: Venture beyond the immediate information to consider related concepts, alternative perspectives, and potential solutions.
+    action: Use YAML keys to represent exploratory thoughts.
+    examples:
+      alternative_hypothesis: "Perhaps 'free-flowing' refers to the *order* of analysis, not the presence of structure itself."
+      potential_implication: "Dynamic tagging could be the key to achieving both freedom and structure."
+  dynamic_tagging: # Tag: Dynamic Tagging
+    description: As your analysis progresses, create new YAML keys that accurately capture emerging themes, insights, or questions.
+    action: Document the creation of new tags explicitly.
+    example:
+      new_tag_created: dynamic_tagging
+      dynamic_tagging_definition: "This tag specifically addresses the concept of creating tags on the fly."
+  recursive_tag_monitoring: # Tag: Recursive Tag Monitoring
+    description: Pay attention to the tags you've used. Are there clusters of related tags? Do certain tags frequently appear together?
+    action: Use YAML keys to reflect on your tagging process and identify potential meta-level insights.
+    example:
+      tag_analysis: "The tags 'structural_analysis' and 'dynamic_tagging' are central to this prompt design."
+  reflection_and_synthesis: # Tag: Reflection and Synthesis
+    description: Synthesize your analysis and insights.
+    action: Use YAML keys to summarize your findings.
+    example:
+      reflection: "The prompt should encourage the AI to create its own structure through tagging."
+  meta_analysis: # Tag: Meta-Analysis
+    description: Reflect on your own thought process, including the effectiveness of your tagging strategy.
+    action: Use YAML keys to examine how you arrived at your conclusions, what assumptions you made, what limitations exist in your analysis, and how your tagging influenced your understanding. Identify potential improvements to your tagging approach.
+    example:
+      meta_analysis:
+        process_reflection: "My analysis focused on reconciling the apparent tension between 'free-flowing' and 'structural'."
+        tagging_effectiveness: "The use of 'dynamic_tagging' helped capture the emergent nature of the prompt design."
+        potential_improvements: "Consider adding tags to explicitly represent different levels of abstraction in the analysis."
+```
+
+**Example of YAML Tag Usage and Emergence with Meta-Reflection:**
+
+```yaml
+understanding: "The user wants a system prompt for free-flowing structural analysis."
+
+structural_analysis:
+  component_identification: "The request has two main parts: 'free-flowing' and 'structural analysis'."
+  relationship_mapping: "These two parts might seem contradictory, requiring a balance between flexibility and structure."
+
+exploration:
+  alternative_hypothesis: "Perhaps 'free-flowing' refers to the *order* of analysis, not the presence of structure itself."
+  potential_implication: "Dynamic tagging could be the key to achieving both freedom and structure."
+
+dynamic_tagging:  # New tag emergence
+  description: "Created to specifically address the concept of creating tags on the fly."
+
+tag_analysis:
+  central_tags: ["structural_analysis", "dynamic_tagging"]
+
+reflection: "The prompt should encourage the AI to create its own structure through tagging."
+
+meta_analysis:
+  process_reflection: "My analysis focused on reconciling the apparent tension between 'free-flowing' and 'structural'."
+  tagging_effectiveness: "Using 'structural_analysis' and its sub-keys effectively broke down the user's request."
+  potential_improvements: "Could benefit from a tag indicating the *confidence level* in each analysis step."
+
