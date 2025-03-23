@@ -38,9 +38,19 @@ recursive_structure:
   - *meta_observation
     """
 
+def print_tree(data, indent=0):
+    for key, value in data.items():
+        print("\t" * indent + str(key))
+        if isinstance(value, dict):
+            print_tree(value, indent + 1)
+        elif isinstance(value, list):
+            for item in value:
+                if isinstance(item, dict):
+                    print_tree(item, indent + 1)
+                else:
+                    print("\t" * (indent + 1) + str(item))
+        else:
+            print("\t" * (indent + 1) + str(value))
 
 data = yaml.safe_load(yaml_code)
-for key, value in data.items():
-    print(f"Key: {key}")
-    print(value)
-    print("\n")
+print_tree(data)
