@@ -32,7 +32,6 @@ def create_graph_from_yaml(data, graph=None, parent_node=None, path=None):
                 if isinstance(item, dict):
                     create_graph_from_yaml(item, graph, list_item_node, list_item_path)
 
-
     return graph
 
 graph = create_graph_from_yaml(data)

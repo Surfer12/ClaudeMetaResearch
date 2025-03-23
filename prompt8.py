@@ -1,5 +1,7 @@
+
 import yaml
-import pygraphviz as pgv
+import asciitree
+
 
 # YAML code to parse
 yaml_code = """
@@ -63,6 +65,35 @@ root_label = "recursive_structure"
 graph.add_node(root_label)
 add_to_graph(root_label, data[root_label])
 
+def convert_dict_to_tree(d):
+    tree = {}
+    for key, value in d.items():
+        if isinstance(value, dict):
+            tree[key] = convert_dict_to_tree(value)
+        else:
+            tree[key] = value
+    return tree
+
+# Convert the YAML data to a tree-like structure
+tree_structure = convert_dict_to_tree(data)
+
+def print_tree(data, indent=0):
+    for key, value in data.items():
+        print("\t" * indent + str(key))
+        if isinstance(value, dict):
+            print_tree(value, indent + 1)
+        elif isinstance(value, list):
+            for item in value:
+                if isinstance(item, dict):
+                    print_tree(item, indent + 1)
+                else:
+                    print("\t" * (indent + 1) + str(item))
+        else:
+            print("\t" * (indent + 1) + str(value))
+
+# Print the YAML structure as an ASCII tree
+print(asciitree.draw_tree(tree_structure))
+
 # Render the graph
 graph.layout(prog='dot')
-graph.draw('yaml_structure.png')
+graph.draw('yaml_structure.svg')
