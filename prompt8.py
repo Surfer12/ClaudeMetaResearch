@@ -1,7 +1,10 @@
-
 import yaml
+# import pygraphviz as pgv
+# import networkx as nx
+import pygraphviz as pgv
+import networkx as nx
+import matplotlib.pyplot as plt
 import asciitree
-
 
 # YAML code to parse
 yaml_code = """
@@ -65,35 +68,41 @@ root_label = "recursive_structure"
 graph.add_node(root_label)
 add_to_graph(root_label, data[root_label])
 
-def convert_dict_to_tree(d):
-    tree = {}
-    for key, value in d.items():
-        if isinstance(value, dict):
-            tree[key] = convert_dict_to_tree(value)
-        else:
-            tree[key] = value
-    return tree
+class TreeNode:
+    def __init__(self, text, children=None):
+        self.text = text
+        self.children = children if children is not None else []
+
+    def __str__(self):
+        return self.text
+
+def convert_to_tree(key, data):
+    if isinstance(data, dict):
+        node = TreeNode(key, children=[convert_to_tree(k, v) for k, v in data.items()])
+        return node
+    elif isinstance(data, list):
+        node = TreeNode(key, children=[TreeNode(str(item)) for item in data]) # Treat list items as leaf nodes
+        return node
+    else:
+        return TreeNode(f"{key}: {data}" if key else str(data))
+
+def convert_yaml_to_tree(data):
+    root_children = []
+    for key, value in data.items():
+        root_children.append(convert_to_tree(key, value))
+    if len(root_children) == 1:
+        return root_children[0]
+    else:
+        return TreeNode("root", children=root_children)
+
 
 # Convert the YAML data to a tree-like structure
-tree_structure = convert_dict_to_tree(data)
+tree_structure_root = convert_yaml_to_tree(data)
 
-def print_tree(data, indent=0):
-    for key, value in data.items():
-        print("\t" * indent + str(key))
-        if isinstance(value, dict):
-            print_tree(value, indent + 1)
-        elif isinstance(value, list):
-            for item in value:
-                if isinstance(item, dict):
-                    print_tree(item, indent + 1)
-                else:
-                    print("\t" * (indent + 1) + str(item))
-        else:
-            print("\t" * (indent + 1) + str(value))
 
-# Print the YAML structure as an ASCII tree
-print(asciitree.draw_tree(tree_structure))
+print(asciitree.draw_tree(tree_structure_root))
 
 # Render the graph
 graph.layout(prog='dot')
 graph.draw('yaml_structure.svg')
+plt.show()
