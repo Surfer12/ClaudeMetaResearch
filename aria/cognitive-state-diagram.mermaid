@@ -1,0 +1,78 @@
+stateDiagram-v2
+    [*] --> SensoryPerception: Project Aria Input
+    
+    state "Sensory Processing" as SensoryPerception {
+        [*] --> RawSensory: Aria VRS Data
+        RawSensory --> SparseEncode: Selective Activation
+        SparseEncode --> FeatureVector: Dimensionality 512
+        FeatureVector --> [*]: Tagged Features
+    }
+    
+    SensoryPerception --> PatternRecognition: Sensory Markers
+    
+    state "Pattern Recognition" as PatternRecognition {
+        [*] --> ModelSelection: Activation Threshold
+        ModelSelection --> ModelApplication: Apply Models
+        ModelApplication --> PatternDiscovery: Frequency Analysis
+        PatternDiscovery --> [*]: Recognized Patterns
+    }
+    
+    PatternRecognition --> CognitiveProcessing: Patterns
+
+    state "Cognitive Processing" as CognitiveProcessing {
+        [*] --> ThoughtInitiation: Initial Concepts
+        ThoughtInitiation --> EmotionalModulation: Affective Response
+        EmotionalModulation --> EnhancedCognition: Modulated Thinking
+        EnhancedCognition --> [*]: Enhanced Thoughts
+    }
+    
+    CognitiveProcessing --> KnowledgeSynthesis: Complex Thoughts
+    
+    state "Knowledge Synthesis" as KnowledgeSynthesis {
+        [*] --> CrossDomainMapping: Multi-modal Integration
+        CrossDomainMapping --> ConceptualAssembly: Conceptual Structures
+        ConceptualAssembly --> MemoryEncoding: Importance & Novelty
+        MemoryEncoding --> [*]: New Memory Structures
+    }
+    
+    KnowledgeSynthesis --> MetaCognition: Knowledge Structures
+    
+    state "Meta-Cognitive Processing" as MetaCognition {
+        [*] --> SelfExamination: Recursive Analysis
+        SelfExamination --> ParameterAdjustment: Adaptation
+        ParameterAdjustment --> BoundaryRefinement: Conceptual Flexibility
+        BoundaryRefinement --> [*]: Updated Self-Model
+    }
+    
+    MetaCognition --> SelfModification: Adaptation Directives
+    
+    state "Self-Modification" as SelfModification {
+        [*] --> ThresholdTuning: Activation Parameters
+        ThresholdTuning --> IntegrationDepth: Recursive Depth
+        IntegrationDepth --> ModelRefinement: Knowledge Structures
+        ModelRefinement --> [*]: Evolved System State
+    }
+    
+    SelfModification --> SensoryPerception: Recursive Cycle
+    
+    note right of SensoryPerception
+        Initial sensory processing from
+        Project Aria data streams (VRS format)
+    end note
+    
+    note right of PatternRecognition
+        Cognitive models from IP-CSEA
+        applied using sparse activation
+    end note
+    
+    note right of MetaCognition
+        Recursive self-examination creates
+        emergent understanding through
+        continuous refinement
+    end note
+    
+    note right of SelfModification
+        System evolves through recursive
+        cycles, increasing integration depth
+        with each iteration
+    end note

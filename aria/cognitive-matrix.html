@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 100%;
+      margin: 0;
+      padding: 15px;
+    }
+    .matrix-container {
+      display: grid;
+      grid-template-columns: 180px repeat(5, 1fr);
+      grid-gap: 2px;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    .matrix-header {
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .matrix-row-header {
+      font-weight: bold;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .matrix-cell {
+      padding: 10px;
+      text-align: center;
+      font-size: 13px;
+      position: relative;
+      border-radius: 4px;
+      transition: transform 0.2s;
+    }
+    .matrix-cell:hover {
+      transform: scale(1.05);
+      z-index: 10;
+    }
+    .sensory {
+      background-color: #e1f5fe;
+      border: 1px solid #01579b;
+    }
+    .cognitive {
+      background-color: #e8f5e9;
+      border: 1px solid #2e7d32;
+    }
+    .emotional {
+      background-color: #fce4ec;
+      border: 1px solid #c2185b;
+    }
+    .knowledge {
+      background-color: #fff3e0;
+      border: 1px solid #e65100;
+    }
+    .meta {
+      background-color: #f3e5f5;
+      border: 1px solid #6a1b9a;
+    }
+    .intensity-high {
+      font-weight: bold;
+    }
+    .intensity-medium {
+      font-weight: normal;
+    }
+    .intensity-low {
+      font-weight: lighter;
+      font-style: italic;
+    }
+    .matrix-title {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    .legend {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin: 0 10px 10px 0;
+    }
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      border-radius: 3px;
+    }
+    .notes {
+      margin-top: 30px;
+      font-size: 14px;
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 5px;
+      border-left: 4px solid #6a1b9a;
+    }
+  </style>
+</head>
+<body>
+  <div class="matrix-title">Dynamic Cognitive Matrix: Cross-Domain Integration</div>
+  
+  <div class="matrix-container">
+    <!-- Headers -->
+    <div class="matrix-row-header">Processing Domains</div>
+    <div class="matrix-header">Sensory Processing<br>(Project Aria)</div>
+    <div class="matrix-header">Pattern Recognition<br>(IP-CSEA)</div>
+    <div class="matrix-header">Cognitive Processing<br>(Thought Generation)</div>
+    <div class="matrix-header">Knowledge Synthesis<br>(Memory Formation)</div>
+    <div class="matrix-header">Meta-Cognitive<br>(Self-Modification)</div>
+    
+    <!-- Sensory Row -->
+    <div class="matrix-row-header">Sensory Processing</div>
+    <div class="matrix-cell sensory intensity-high">Sparse Encoding<br>Selective Activation<br>(0.9)</div>
+    <div class="matrix-cell sensory intensity-medium">Feature Mapping<br>Pattern Templates<br>(0.7)</div>
+    <div class="matrix-cell sensory intensity-low">Perceptual Framing<br>Attentional Bias<br>(0.4)</div>
+    <div class="matrix-cell sensory intensity-medium">Sensory Memory<br>Modality Binding<br>(0.6)</div>
+    <div class="matrix-cell sensory intensity-low">Encoding Efficiency<br>Parameter Tuning<br>(0.3)</div>
+    
+    <!-- Pattern Row -->
+    <div class="matrix-row-header">Pattern Recognition</div>
+    <div class="matrix-cell cognitive intensity-medium">Sensory Filtering<br>Feature Selection<br>(0.7)</div>
+    <div class="matrix-cell cognitive intensity-high">Recursive Pattern<br>Matching (0.9)</div>
+    <div class="matrix-cell cognitive intensity-medium">Pattern-Driven<br>Thought Activation<br>(0.8)</div>
+    <div class="matrix-cell cognitive intensity-medium">Pattern Memory<br>Consolidation<br>(0.6)</div>
+    <div class="matrix-cell cognitive intensity-high">Pattern Efficiency<br>Threshold Adjustment<br>(0.8)</div>
+    
+    <!-- Cognitive Row -->
+    <div class="matrix-row-header">Cognitive Processing</div>
+    <div class="matrix-cell emotional intensity-low">Perceptual Framing<br>Sensory Selection<br>(0.4)</div>
+    <div class="matrix-cell emotional intensity-medium">Cognitive Model<br>Activation<br>(0.7)</div>
+    <div class="matrix-cell emotional intensity-high">Thought Generation<br>Emotional Modulation<br>(0.9)</div>
+    <div class="matrix-cell emotional intensity-high">Knowledge<br>Integration<br>(0.8)</div>
+    <div class="matrix-cell emotional intensity-medium">Cognitive Bias<br>Awareness<br>(0.7)</div>
+    
+    <!-- Knowledge Row -->
+    <div class="matrix-row-header">Knowledge Synthesis</div>
+    <div class="matrix-cell knowledge intensity-low">Feature Integration<br>Multi-modal Binding<br>(0.5)</div>
+    <div class="matrix-cell knowledge intensity-medium">Pattern Memory<br>Association<br>(0.6)</div>
+    <div class="matrix-cell knowledge intensity-high">Conceptual<br>Elaboration<br>(0.8)</div>
+    <div class="matrix-cell knowledge intensity-high">Knowledge Network<br>Sparse Structure<br>(0.9)</div>
+    <div class="matrix-cell knowledge intensity-high">Knowledge<br>Boundary Redefinition<br>(0.8)</div>
+    
+    <!-- Meta Row -->
+    <div class="matrix-row-header">Meta-Cognitive</div>
+    <div class="matrix-cell meta intensity-low">Encoding Parameter<br>Adjustment<br>(0.4)</div>
+    <div class="matrix-cell meta intensity-high">Pattern Recognition<br>Refinement<br>(0.8)</div>
+    <div class="matrix-cell meta intensity-medium">Thought Process<br>Analysis<br>(0.7)</div>
+    <div class="matrix-cell meta intensity-high">Memory System<br>Optimization<br>(0.8)</div>
+    <div class="matrix-cell meta intensity-high">Recursive Self-Model<br>Evolution<br>(0.9)</div>
+  </div>
+  
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-color sensory"></div>
+      <span>Sensory Domain</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color cognitive"></div>
+      <span>Pattern Domain</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color emotional"></div>
+      <span>Cognitive Domain</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color knowledge"></div>
+      <span>Knowledge Domain</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color meta"></div>
+      <span>Meta-Cognitive Domain</span>
+    </div>
+  </div>
+  
+  <div class="notes">
+    <p><strong>Recursive Integration Notes:</strong> This matrix visualizes the cross-domain interaction strength between different cognitive processing layers in the integrated Project Aria and IP-CSEA system. Numbers in parentheses represent interaction strength (0.0-1.0). The diagonal represents primary functions within each domain, while off-diagonal cells represent cross-domain influences.</p>
+    
+    <p>The matrix reveals several important insights about the integrated cognitive architecture:</p>
+    <ul>
+      <li>The strongest inter-domain connections occur between Pattern Recognition and Meta-Cognitive domains (0.8), reflecting the system's ability to refine its pattern recognition capabilities through recursive self-examination.</li>
+      <li>Knowledge Synthesis shows strong bidirectional connections with Meta-Cognitive processing (0.8), highlighting how knowledge boundaries dynamically adapt based on system experience.</li>
+      <li>The weakest connections are between Sensory Processing and Meta-Cognitive domains (0.3-0.4), suggesting these domains interact primarily through intermediate processes rather than directly.</li>
+    </ul>
+    
+    <p>This matrix visualization enables identification of processing bottlenecks and optimal information flow pathways within the cognitive architecture.</p>
+  </div>
+</body>
+</html>
