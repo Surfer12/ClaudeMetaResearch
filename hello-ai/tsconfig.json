@@ -1,8 +1,11 @@
 {
 	"compilerOptions": {
-		{
-		"compilerOptions": {
-		 "types": ["worker-configuration.d.ts"]
+		"types": [
+			"@types/node",
+			"@types/service-worker-mock",
+			"@cloudflare/workers-types/2023-07-01",
+			"worker-configuration.d.ts"
+		],
 		"allowJs": true,
 		"allowSyntheticDefaultImports": true,
 		"baseUrl": "src",
@@ -23,12 +26,7 @@
 		"traceResolution": false,
 		"outDir": "",
 		"target": "esnext",
-		"module": "esnext",
-		"types": [
-			"@types/node",
-			"@types/service-worker-mock",
-			"@cloudflare/workers-types/2023-07-01"
-		]
+		"module": "esnext"
 	},
 	"exclude": ["node_modules", "dist", "tests"],
 	"include": ["src", "scripts"]
