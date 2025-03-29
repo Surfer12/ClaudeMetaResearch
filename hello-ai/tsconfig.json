@@ -1,5 +1,8 @@
 {
 	"compilerOptions": {
+		{
+		"compilerOptions": {
+		 "types": ["worker-configuration.d.ts"]
 		"allowJs": true,
 		"allowSyntheticDefaultImports": true,
 		"baseUrl": "src",
