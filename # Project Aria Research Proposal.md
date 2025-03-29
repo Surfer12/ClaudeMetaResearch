@@ -10,13 +10,20 @@ Our research aims to develop a novel recursive cognitive architecture that integ
 
 1. **Dynamic cognitive boundary management** - Employing flexible perceptual-conceptual boundaries that adapt based on sensory input and processing outcomes
 2. **Recursive self-examination processes** - Enabling the system to analyze and modify its own processing parameters through meta-cognitive feedback loops
-3. **Multi-modal knowledge synthesis** - Creating emergent understanding across sensory modalities through sparse encoding techniques
+3. **Multi-modal knowledge synthesis** - Creating emergent understanding across sensory modalities through sparse encoding
+techniques
+
+
+[[View Cognitive System Integration Diagram](https://claude.site/artifacts/f67a5c2c-ea9d-4ac0-a843-c4b83f781030)
+
 
 Project Aria uniquely provides:
 - Naturalistic egocentric perception preserving the wearer's normal behavior, health metrics, eye gaze, state transition queues and so forth.
 - Multi-modal synchronized sensor data (visual, spatial, motion)
 - Rich eye-tracking capabilities essential for attention modeling //TODO: add more details and check if this is true
 - Progressive and known brand for user-friendly and reproducible research across environments and eventual product line.
+
+[View Cognitive System Integration Diagram](https://claude.site/artifacts/4eaab529-afe8-4213-a26f-ca344f9c3d93?fullscreen=true)
 
 The collected data will be used to train several interconnected models:
 - A mamba model for identifying and targeting the likely predictable state transitions of the user during everyday activities. These insights will be used to train a meta-cognitive processing network of mamba models that evaluate and modify system parameters to integrate alongside a variety of important cognitive processes and their associated patterns with spare mixture of experts models.
