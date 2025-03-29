@@ -184,10 +184,12 @@ graph TD
     class MetaCognition,SelfModel,BoundaryAdjustment meta
     class SystemPerformance monitoring
     class Progress,Power,Resource,Reflection thematic
-```
+```mermaid
+
 
 ### Experimentation with Existing Datasets
 **Project Aria Pilot Dataset** and **Aria Digital Twin Dataset**
+#TODO
 
 ### Research Goal with Project Aria
 Our research aims to develop a novel, state of the art  cognitive-mimicking architecture that integrates egocentric perception with adaptive self-modifying cognitive processes. Specifically, I forsee implementing a multi-layered integration between Project Aria's sensory capabilities and my developing Cognitive Sparse Encoded Architecture (CSEA) to create a system capable of:

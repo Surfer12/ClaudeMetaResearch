@@ -482,7 +482,7 @@ This technical implementation framework demonstrates the feasibility of true rec
 
 ## Devices Requested
 
-**Large devices requested:** 2
+**Large devices requested:** 1
 **Small devices requested:** 1
 
 **Shipping Address:**
